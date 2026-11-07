@@ -1,0 +1,287 @@
+{
+  "paro": {
+    "title": "Paro Valley Package — Himalayan Fly Fishing | Divine Fly Fishing",
+    "description": "Experience a 10-day technical fly fishing journey in the iconic Paro Valley. Master the art of stalking wild trout in the shadow of ancient dzongs.",
+    "heroImg": "paro.webp",
+    "h1": "Paro Valley Journey",
+    "crumb": "Paro Valley",
+    "eyebrow": "Gateway to the Himalayas",
+    "heading": "The Art of Fishing the Paro Chhu",
+    "intro": "The Paro Valley offers a blend of accessibility and technical challenge. From the wide, gravel-bottomed stretches in the lower valley to the intimate, high-gradient mountain streams, this 10-day journey is a masterclass in reading Himalayan waters.",
+    "infos": [
+      "Intermediate. Suitable for all with a passion for stalking.",
+      "4wt to 6wt rods. Versatile leader setups recommended.",
+      "Sight fishing and pocket water management techniques.",
+      "Wild Brown Trout, Snow Trout, Native Species.",
+      "Prime: March – May & August – October."
+    ],
+    "slides": [
+      {
+        "src": "paro.webp",
+        "alt": "Paro Landscape"
+      },
+      {
+        "src": "img-1541.webp",
+        "alt": "Paro River"
+      },
+      {
+        "src": "img-2812.webp",
+        "alt": "Fishing Action"
+      },
+      {
+        "src": "photo-2023-09-12-22-26-04.webp",
+        "alt": "Bhutan Culture"
+      }
+    ],
+    "journey": "10-Day Technical Journey",
+    "days": [
+      {
+        "title": "Arrival & Valley Orientation",
+        "text": "Arrive at Paro International Airport. Meet your head guide and transfers to your heritage lodge. Afternoon briefing and gear organization overlooking the Paro Chhu."
+      },
+      {
+        "title": "Lower Paro Chhu introduction",
+        "text": "A gentle day on the wider lower stretches of the river. Focus on reading the currents and understanding the behavior of local Brown Trout."
+      },
+      {
+        "title": "Tiger's Nest Hike & Evening Hatch",
+        "text": "Morning hike to the iconic Taktsang (Tiger's Nest) Monastery. Rest in the afternoon before a technical dry-fly session during the evening hatch near the lodge."
+      },
+      {
+        "title": "Upper Paro Chhu (Drukyel Dzong)",
+        "text": "Moving north towards the Drukyel Dzong ruins. The river becomes swifter and more technical with pocket water and deep pools requiring precise casting."
+      },
+      {
+        "title": "Technical Stalking in Gunitsawa",
+        "text": "Deep exploration of the Gunitsawa stretches. This is stalking country. Low profile approaches and long leaders are essential to hook the wary resident trout."
+      },
+      {
+        "title": "Pachu River Confluence",
+        "text": "Fishing the confluence where the Pachu meets the main river. The mixing of waters creates prime feeding lanes and opportunities for larger fish."
+      },
+      {
+        "title": "Shana Village Tributaries",
+        "text": "A trek into the remote Shana village area. Exploring crystal-clear tributaries that offer intimate sight-fishing for wild Snow Trout."
+      },
+      {
+        "title": "Intimate Stream Management",
+        "text": "Refining stream-craft in narrow, overgrown stretches. This day focuses on side-casts and roll-casting accuracy in challenging terrain."
+      },
+      {
+        "title": "Cultural Tour & Farewell Cast",
+        "text": "Visit to Paro Rinpung Dzong and local markets. Afternoon \"choice\" session to target your favorite stretch of the week, followed by a riverside dinner."
+      },
+      {
+        "title": "Departure",
+        "text": "Final morning reflections and transfer to Paro International Airport for departure."
+      }
+    ],
+    "included": [
+      "Full Bhutanese Visa & Sustainable Fee",
+      "Nationally Certified Fishing Guides",
+      "All Internal Transfers & Logisitics",
+      "Riverside Lodge Accomodations",
+      "All Meals & Cultural Tours"
+    ],
+    "excluded": [
+      "International Flights",
+      "Personal Fishing Tackle",
+      "Travel Insurance",
+      "Gratuities for Guides"
+    ],
+    "formId": "paroPackageForm",
+    "pkg": "Paro Valley Package",
+    "book": "Paro Valley Journey",
+    "booktext": "Secure your technical fly fishing journey today. Our team will contact you within 24 hours to discuss seasonal availability and gear requirements."
+  },
+  "bumthang": {
+    "title": "Bumthang Valley Package — Spiritual Fly Fishing | Divine Fly Fishing",
+    "description": "Experience a 10-day trophy fly fishing journey in the spiritual heart of Bhutan. Target large Brown Trout in the Tang and Chummey valleys.",
+    "heroImg": "bumthang.webp",
+    "h1": "Bumthang Valley Journey",
+    "crumb": "Bumthang Valley",
+    "eyebrow": "Spiritual heart of the Kingdom",
+    "heading": "The Art of Fishing the Bumthang Waters",
+    "intro": "Bumthang, comprising four distinct valleys, is the spiritual epicenter of Bhutan. This 10-day journey takes you deep into the Tang and Chummey valleys to target trophy-sized wild Brown Trout in high-gradient mountain streams and spring-fed tributaries.",
+    "infos": [
+      "Intermediate to Advanced. Experience with technical currents is helpful.",
+      "5wt to 7wt rods for trophy sized trout. Heavier headers required.",
+      "High-stick nymphing and aggressive streamer presentations.",
+      "Trophy Brown Trout, Snow Trout.",
+      "Prime: March – May & August – October."
+    ],
+    "slides": [
+      {
+        "src": "bumthang.webp",
+        "alt": "Bumthang Landscape"
+      },
+      {
+        "src": "img-1541.webp",
+        "alt": "Bumthang River"
+      },
+      {
+        "src": "img-2812.webp",
+        "alt": "Fishing Action"
+      },
+      {
+        "src": "photo-2023-09-12-22-26-04.webp",
+        "alt": "Bhutan Culture"
+      }
+    ],
+    "journey": "10-Day Technical Journey",
+    "days": [
+      {
+        "title": "Domestic Flight to Bumthang & Jakar Introduction",
+        "text": "Arrive in Paro and take a domestic flight to Bumthang's Bathpalathang Airport. Transfer to your lodge in Jakar. Evening briefing and initial gear calibration for the higher altitude."
+      },
+      {
+        "title": "Chummey Valley Intro Streams",
+        "text": "A gentle day on the accessible streams of the Chummey Valley. This area is famous for its textile weaving and intimate, well-oxygenated water home to active Brown Trout."
+      },
+      {
+        "title": "Tang Valley - The First Expedition",
+        "text": "Venturing into the remote Tang Valley. The river here is more challenging with deep pools tucked beneath rocky ledges and ancient farmhouses."
+      },
+      {
+        "title": "Tang Chhu - Trophy Trout Pursuit",
+        "text": "Targeting the larger stretches of the Tang Chhu. This day focuses on aggressive presenting of streamers and heavy nymphs to entice the valley's trophy Brown Trout."
+      },
+      {
+        "title": "Cultural Heritage & Evening Cast",
+        "text": "Visit Kurjey Lhakhang and Tamshing Monastery. In the late afternoon, enjoy a technical \"hatch session\" on a private stretch of the Chummey Chhu."
+      },
+      {
+        "title": "Remote Tang Gorge Fishing",
+        "text": "A trek into the deeper gorge stretches of the Tang Valley. High gradient water and deep canyon pools offer high-adrenaline technical fishing."
+      },
+      {
+        "title": "Upper Chummey Springs",
+        "text": "Exploring the spring-fed headwaters of the Chummey Valley. The water temperature is extremely stable here, leading to very active and visually stunning wild trout."
+      },
+      {
+        "title": "Ura Valley Day Trip",
+        "text": "Drive to the highest of Bumthang's valleys, Ura. Fishing in the thin high-altitude air requires a slow pace and provides a truly \"otherworldly\" angling environment."
+      },
+      {
+        "title": "Trophy Hunting - Final Casts",
+        "text": "One final day to return to the most productive stretches of the Tang Chhu. Evening farewell feast at the lodge with traditional Bumthap hospitality."
+      },
+      {
+        "title": "Flight to Paro & Departure",
+        "text": "Morning flight back to Paro for final souvenir shopping and your onward international connection."
+      }
+    ],
+    "included": [
+      "Full Bhutanese Visa & Sustainable Fee",
+      "Senior Fly Fishing Guides",
+      "All Internal Flights & Transfers",
+      "Traditional Bumthang Lodge Stays",
+      "All Meals & Local Refreshments"
+    ],
+    "excluded": [
+      "International Flights",
+      "Personal Angling Gear",
+      "Travel & Evacuation Insurance",
+      "Gratuities for Service Staff"
+    ],
+    "formId": "bumthangPackageForm",
+    "pkg": "Bumthang Valley Package",
+    "book": "Bumthang Valley Journey",
+    "booktext": "Secure your technical fly fishing journey today. Our team will contact you within 24 hours to discuss seasonal availability and gear requirements."
+  },
+  "phobjikha": {
+    "title": "Phobjikha Valley Package — Glacial Fly Fishing | Divine Fly Fishing",
+    "description": "Experience a 10-day technical fly fishing journey in the stunning Phobjikha Valley. Fish the glacial Bey Chhu and explore the high-altitude wetlands.",
+    "heroImg": "phobjikha.webp",
+    "h1": "Phobjikha Valley Journey",
+    "crumb": "Phobjikha Valley",
+    "eyebrow": "Conservation & Casting",
+    "heading": "The Art of Fishing the Bey Chhu",
+    "intro": "Phobjikha, the glacial \"Valley of the Cranes,\" offers a mystical setting for fly fishing. The Bey Chhu winds through wide, open marshes and technical high-altitude channels, providing a unique challenge for those seeking wild Brown and Snow Trout in a protected sanctuary.",
+    "infos": [
+      "Advanced. Technical wading and stealth are paramount.",
+      "3wt to 5wt rods. Fine tippets and small dries are key.",
+      "Marshland wading and technical dry-fly drifts.",
+      "Wild Brown Trout, Snow Trout.",
+      "Prime: March – May & August – October."
+    ],
+    "slides": [
+      {
+        "src": "phob.webp",
+        "alt": "Phobjikha Landscape"
+      },
+      {
+        "src": "img-1541.webp",
+        "alt": "Phobjikha River"
+      },
+      {
+        "src": "img-2812.webp",
+        "alt": "Fishing Action"
+      },
+      {
+        "src": "photo-2023-09-12-22-26-04.webp",
+        "alt": "Bhutan Culture"
+      }
+    ],
+    "journey": "10-Day Technical Journey",
+    "days": [
+      {
+        "title": "Arrival & Scenic Drive to Phobjikha",
+        "text": "Arrival at Paro and immediate transfer to the high-altitude Phobjikha Valley (approx. 4 hours). Evening briefing and initial gear setup at your valley lodge."
+      },
+      {
+        "title": "Crane Center & Acclimatization",
+        "text": "Acclimatize to the 3,000m+ altitude. Visit the Black-Necked Crane Center to learn about the valley's unique conservation efforts. Short introductory cast in the afternoon."
+      },
+      {
+        "title": "Intro to the Bey Chhu",
+        "text": "Our first full day on the local Bey Chhu river. Focus on wide, slower stretches to understand the feeding patterns of the wild Brown Trout."
+      },
+      {
+        "title": "Upper Glacial Stream Exploration",
+        "text": "Heading to the upper reaches where the water is coldest and swiftest. Technical pocket water fishing requiring fast reactions and accurate casting."
+      },
+      {
+        "title": "Lower Valley Wetland Meanders",
+        "text": "A day of technical \"stalking\" in the winding meanders of the lower valley. The water is deep and slow here, requiring stealth and long-range presentations."
+      },
+      {
+        "title": "Trek to Gangtey Goempa & Evening Hatch",
+        "text": "Visit the magnificent 17th-century Gangtey Monastery. Spend the evening targeting the incredible hatching events that attract larger trout from the wetland pools."
+      },
+      {
+        "title": "Remote Tributary Hike",
+        "text": "Hike to remote tributaries that feed into the valley floor. These intimate streams offer sight-fishing for active Snow Trout in crystal clear pools."
+      },
+      {
+        "title": "Sight Fishing Masterclass",
+        "text": "A day dedicated to refining visual detection and presentation skills in the most transparent stretches of the Bey Chhu."
+      },
+      {
+        "title": "Full Valley Traverse & Farewell Dinner",
+        "text": "One final day to cover your favorite stretches. Evening farewell dinner featuring local Bhutanese cuisine and reflections on the week's adventure."
+      },
+      {
+        "title": "Departure",
+        "text": "Final morning sunrise in the valley before the return drive to Paro and your departure flight."
+      }
+    ],
+    "included": [
+      "Full Bhutanese Visa & Sustainable Fee",
+      "Professional Fly Fishing Guides",
+      "High-Altitude Lodge Accomodations",
+      "All Internal Transfers & Logistics",
+      "All Meals & Local Refreshments"
+    ],
+    "excluded": [
+      "International Flights",
+      "Personal Fishing Equipment",
+      "Specialized Travel Insurance",
+      "Optional Cultural Fees"
+    ],
+    "formId": "phobjikhaPackageForm",
+    "pkg": "Phobjikha Valley Package",
+    "book": "Phobjikha Valley Journey",
+    "booktext": "Secure your technical fly fishing journey today. Our team will contact you within 24 hours to discuss seasonal availability and gear requirements."
+  }
+}

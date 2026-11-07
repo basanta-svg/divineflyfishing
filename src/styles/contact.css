@@ -1,0 +1,157 @@
+.contact-wrapper {
+  padding: 9vh 0;
+  background: var(--color-bg);
+}
+
+.contact-grid-main {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 100px;
+  align-items: flex-start;
+}
+
+.contact-info-side h2 {
+  font-family: var(--font-heading);
+  font-size: 3.5rem;
+  font-weight: 500;
+  color: #1a1a1a;
+  line-height: 1.1;
+  margin-bottom: 30px;
+}
+
+.contact-info-list {
+  margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.info-block {
+  display: flex;
+  align-items: flex-start;
+  gap: 25px;
+}
+
+.info-icon-box {
+  width: 64px;
+  height: 64px;
+  background: #fff;
+  border: 1px solid #eee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: #c49b63;
+  flex-shrink: 0;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.info-icon-box svg {
+  width: 28px;
+  height: 28px;
+}
+
+.info-text h4 {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #1a1a1a;
+}
+
+.info-text p, .info-text a {
+  font-size: 1.05rem;
+  color: #666;
+  line-height: 1.6;
+  transition: color 0.3s;
+}
+
+.info-text a:hover {
+  color: #c49b63;
+}
+
+/* --- Contact Form --- */
+.contact-form-card {
+  background: #fff;
+  padding: 60px;
+  border-radius: 4px;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.06);
+  border: 1px solid #f0f0f0;
+}
+
+.form-group-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+  margin-bottom: 25px;
+}
+
+.form-field {
+  margin-bottom: 25px;
+}
+
+.form-field label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+  color: #555;
+}
+
+.form-field input, .form-field textarea, .form-field select {
+  width: 100%;
+  padding: 18px 20px;
+  border: 1px solid #e5e5e5;
+  background: #fcfcfc;
+  font-size: 1rem;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  font-family: inherit;
+  color: #1a1a1a;
+}
+
+.form-field input:focus, .form-field textarea:focus, .form-field select:focus {
+  outline: none;
+  border-color: #c49b63;
+  background: #fff;
+  box-shadow: 0 0 0 4px rgba(196, 155, 99, 0.05);
+}
+
+.btn-submit {
+  width: 100%;
+  background: #c49b63;
+  color: #fff;
+  padding: 18px;
+  border-radius: 12px;
+  border: none;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-align: center;
+  display: block;
+  margin-top: 20px;
+}
+
+.btn-submit:hover {
+  background: #1a1a1a;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+@media (max-width: 1024px) {
+  .contact-grid-main { grid-template-columns: 1fr; gap: 80px; }
+  .contact-info-side { text-align: center; }
+  .info-block { flex-direction: column; align-items: center; text-align: center; }
+}
+
+@media (max-width: 768px) {
+  .contact-form-card { padding: 40px 25px; }
+  .form-group-grid { grid-template-columns: 1fr; }
+  .contact-info-side h2 { font-size: 2.8rem; }
+}
+  

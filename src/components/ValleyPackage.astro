@@ -1,0 +1,150 @@
+---
+import { withBase } from '../lib/url';
+import Img from './Img.astro';
+import Layout from '../layouts/Layout.astro';
+import '../styles/packages.css';
+import data from '../data/valleys.json';
+
+interface Props { valley: keyof typeof data }
+const { valley } = Astro.props;
+const v = data[valley];
+const infoMeta = [
+  { label: 'Skill Level', icon: '<path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>' },
+  { label: 'Equipment', icon: '<path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"/><line x1="16" y1="8" x2="2" y2="22"/><line x1="17.5" y1="15" x2="9" y2="15"/>' },
+  { label: 'Methodology', icon: '<circle cx="12" cy="12" r="10"/><path d="M12 8l4 4-4 4M8 12h7"/>' },
+  { label: 'Target Species', icon: '<path d="M22 12s-4.44-7-10-7-10 7-10 7 4.44 7 10 7 10-7 10-7z"/><circle cx="12" cy="12" r="3"/>' },
+  { label: 'Best Months', icon: '<rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>' },
+];
+---
+<Layout title={v.title} description={v.description} current="packages">
+  <header class="page-hero" style={`background-image: url('${withBase(`/assets/images/heroes/${v.heroImg}`)}');`}>
+    <div class="container slide-up">
+      <h1>{v.h1}</h1>
+      <nav class="breadcrumb">
+        <a href={withBase('/')}>Home</a><span>/</span><a href={withBase('/packages/')}>Packages</a><span>/</span>
+        <span style="color: #fdfcfb;">{v.crumb}</span>
+      </nav>
+    </div>
+  </header>
+
+  <section class="valley-intro">
+    <div class="container">
+      <div class="intro-text-header">
+        <span class="sub-label">{v.eyebrow}</span>
+        <h2>{v.heading}</h2>
+        <p>{v.intro}</p>
+      </div>
+
+      <div class="fishing-info-grid info-grid">
+        {infoMeta.map((m, i) => (
+          <div class="info-card">
+            <div class="info-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" set:html={m.icon} />
+            </div>
+            <h4>{m.label}</h4>
+            <p>{v.infos[i]}</p>
+          </div>
+        ))}
+      </div>
+
+      <div class="slider-container">
+        <div class="slider-track" id="sliderTrack">
+          {v.slides.map((s, i) => (
+            <Img src={`/assets/images/photos/full/${s.src}`} alt={s.alt} class="slide" onclick={`openModal(${i})`} />
+          ))}
+        </div>
+        <div class="slider-btns">
+          <button class="slider-btn prev" aria-label="Previous photo" onclick="moveSlider(-1)">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+          <button class="slider-btn next" aria-label="Next photo" onclick="moveSlider(1)">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="itinerary-section">
+    <div class="container">
+      <div class="section-header" style="text-align: center; margin-bottom: 60px;">
+        <span class="sub-label">{v.journey}</span>
+        <h2 class="section-heading">Detailed Itinerary</h2>
+      </div>
+      <div class="itinerary-container">
+        <div class="itinerary-accordion">
+          {v.days.map((d, i) => (
+            <div class={`itinerary-item${i === 0 ? ' active' : ''}`}>
+              <div class="itinerary-header" onclick="toggleAccordion(this)">
+                <div class="day-info">
+                  <span class="day-badge">Day {i + 1}</span>
+                  <h3>{d.title}</h3>
+                </div>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7"/></svg>
+              </div>
+              <div class="itinerary-content"><p>{d.text}</p></div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="details-section">
+    <div class="container">
+      <div class="details-grid">
+        <div class="details-box included-box">
+          <h3>What's Included</h3>
+          <ul class="details-list">
+            {v.included.map((t) => (
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="#c49b63" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg> {t}</li>
+            ))}
+          </ul>
+        </div>
+        <div class="details-box excluded-box">
+          <h3>What's Excluded</h3>
+          <ul class="details-list">
+            {v.excluded.map((t) => (
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="#e74c3c" stroke-width="3"><path d="M18 6L6 18M6 6l12 12"/></svg> {t}</li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="booking-section">
+    <div class="container">
+      <div class="booking-grid">
+        <div class="booking-info">
+          <span class="sub-label">Reserve Your Spot</span>
+          <h2 style="font-family: var(--font-heading); font-size: 2rem; margin-top: 15px; color: #1a1a1a;">Secure Your <br />{v.book}</h2>
+          <p style="color: #555; margin-top: 20px; line-height: 1.8; font-size: 1.1rem;">{v.booktext}</p>
+        </div>
+        <div class="booking-form">
+          <form id={v.formId}>
+            <div class="form-group">
+              <label for="pkg">Selected Package</label>
+              <input id="pkg" type="text" value={v.pkg} readonly class="readonly-field" />
+            </div>
+            <div class="form-row">
+              <div class="form-group"><label for="fn">Full Name</label><input id="fn" type="text" placeholder="John Doe" required /></div>
+              <div class="form-group"><label for="em">Email Address</label><input id="em" type="email" placeholder="john@example.com" required /></div>
+            </div>
+            <div class="form-row">
+              <div class="form-group"><label for="ph">Phone Number</label><input id="ph" type="tel" placeholder="+975 17 00 00 00" required /></div>
+              <div class="form-group"><label for="bd">Booking Date</label><input id="bd" type="date" required /></div>
+            </div>
+            <div class="form-group"><label for="nf">Number of Fishermen</label><input id="nf" type="number" min="1" max="10" value="1" /></div>
+            <div class="form-group"><label for="nt">Special Requirements / Notes</label><textarea id="nt" rows="4" placeholder="Mention any gear rental needs or dietary preferences..."></textarea></div>
+            <button type="submit" class="submit-btn" id="submitBtn">Send Booking Inquiry</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  import '../scripts/packages.js';
+</script>

@@ -1,0 +1,32 @@
+---
+import { Image, getImage } from 'astro:assets';
+import type { HTMLAttributes } from 'astro/types';
+import { resolveImage } from '../lib/images';
+
+interface Props extends Omit<HTMLAttributes<'img'>, 'src' | 'width' | 'height'> {
+  /** Path under /assets/images (resolved from src/assets). */
+  src: string;
+  alt?: string;
+  /** Optional larger version, exposed as data-full (used by lightboxes). */
+  full?: string;
+  widths?: number[];
+}
+
+const { src, alt = '', full, widths, sizes, ...rest } = Astro.props;
+const meta = resolveImage(src);
+const candidate = widths ?? [480, 800, 1200, 1600];
+const srcWidths = [...candidate.filter((w) => w < meta.width), meta.width];
+let fullUrl: string | undefined;
+if (full) {
+  const fm = resolveImage(full);
+  fullUrl = (await getImage({ src: fm, width: Math.min(fm.width, 1800), format: 'webp' })).src;
+}
+---
+<Image
+  src={meta}
+  alt={alt}
+  widths={srcWidths}
+  sizes={sizes ?? '(max-width: 768px) 100vw, 60vw'}
+  data-full={fullUrl}
+  {...rest}
+/>

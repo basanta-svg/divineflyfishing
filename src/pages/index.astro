@@ -1,0 +1,346 @@
+---
+import { withBase } from '../lib/url';
+import heroPoster from '../assets/images/photos/full/img-1566.webp';
+import Img from '../components/Img.astro';
+import Layout from '../layouts/Layout.astro';
+import PhotoCollage from '../components/PhotoCollage.astro';
+const aboutPhotos = ['y48c7373', 'y48c5621', 'y48c5039', 'y48c7029', 'y48c8275', 'y48c5853'];
+---
+<Layout title="Divine Fly Fishing — Fly Fishing Trips to Bhutan" description="Divine Fly Fishing offers world-class fly fishing trips in the pristine rivers of Bhutan. Golden Mahseer, Brown Trout, Snow Trout adventures tailored for you." current="home">
+<!-- ========= HERO ========= -->
+  <section class="hero" id="home">
+    <div class="hero-bg">
+      <video autoplay muted loop playsinline poster={heroPoster.src} class="hero-video">
+        <source src={withBase('/assets/videos/hero.mp4')}
+          type="video/mp4">
+      </video>
+    </div>
+    <div class="hero-content">
+      <span class="hero-subtitle">The Ultimate Himalayan Escape</span>
+      <h1>Divine Fly Fishing</h1>
+      <p class="hero-description">Experience world-class fly fishing in the pristine, untouched rivers of the last
+        Himalayan Kingdom. A journey of serenity, culture, and life-changing catches.</p>
+    </div>
+  </section>
+
+  <!-- ========= EXPERIENCE GRID ========= -->
+  <section class="finest" id="packages">
+    <div class="container">
+      <div class="section-header">
+        <span class="sub-label">Our Adventures</span>
+        <h2 class="section-heading">The Finest Fly Fishing Experience</h2>
+        <p class="section-body">
+          Fly Fishing is a meditative activity whilst being Nurtured by Nature.
+          It is an art form that requires skills, feel, patience, knowledge and strategy.
+        </p>
+      </div>
+
+      <div class="grid-3">
+        <div class="experience-card">
+          <div class="card-image-content">
+            <Img class="card-bg-img" src="/assets/images/golden-mahseer.webp" alt="Golden Mahseer Fishing" />
+            <div class="card-overlay">
+              <div class="card-details">
+                <div class="card-location">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                  <span>Southern Rivers, Bhutan</span>
+                </div>
+                <h3>Golden Mahseer <br /><span>Fly Fishing</span></h3>
+                <div class="card-line"></div>
+                <p>The legendary tiger of the Himalayan rivers, offering the ultimate challenge for any angler.</p>
+                <a href={withBase('/golden-mahseer/')} class="card-cta-modern">
+                  <span>Learn More</span>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Card 2 -->
+        <div class="experience-card">
+          <div class="card-image-content">
+            <Img class="card-bg-img" src="/assets/images/brown-trout.webp" alt="Brown Trout Fishing" />
+            <div class="card-overlay">
+              <div class="card-details">
+                <div class="card-location">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                  <span>Bumthang &amp; Phobjikha Valley</span>
+                </div>
+                <h3>Brown Trout <br /><span>Fly Fishing</span></h3>
+                <div class="card-line"></div>
+                <p>Cast your fly into the crystal clear, high-altitude streams for a truly serene and rewarding catch.
+                </p>
+                <a href={withBase('/brown-trout/')} class="card-cta-modern">
+                  <span>Learn More</span>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Card 3 -->
+        <div class="experience-card">
+          <div class="card-image-content">
+            <Img class="card-bg-img" src="/assets/images/snow-trout.webp" alt="Snow Trout Fishing" />
+            <div class="card-overlay">
+              <div class="card-details">
+                <div class="card-location">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                  <span>Haa &amp; Paro Valley</span>
+                </div>
+                <h3>Snow Trout <br /><span>Fly Fishing</span></h3>
+                <div class="card-line"></div>
+                <p>Discover the unique Snow Trout in the pristine, glacier-fed waters of Bhutan's hidden valleys.</p>
+                <a href={withBase('/snow-trout/')} class="card-cta-modern">
+                  <span>Learn More</span>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========= MODERN ABOUT US ========= -->
+  <section class="about-modern" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-text-side">
+          <span class="sub-label">About Our Company</span>
+          <h2>A Unique Adventure <em>Tailored for You</em></h2>
+          <div class="divider-sm"></div>
+          <p>
+            Divine Fly Fishing is a Bhutanese company run by local guides who
+            grew up beside these rivers. Our trips are carefully planned and
+            tailored to each individual, ensuring that you have the best
+            possible experience.
+          </p>
+          <p>
+            We provide all of the necessary equipment and instruction, so you
+            can focus on enjoying the beauty of nature and the thrill of the catch.
+          </p>
+          <a href={withBase('/about/')} class="btn-primary">About Us</a>
+        </div>
+        <div class="about-image-side">
+          <Img class="about-img-main" src={`/assets/images/photos/full/${aboutPhotos[0]}.webp`} alt="Fly fishing trip in Bhutan" loading="lazy" decoding="async" />
+          <Img class="about-img-team" src={`/assets/images/photos/full/${aboutPhotos[1]}.webp`} alt="The Divine Fly Fishing team" loading="lazy" decoding="async" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========= PACKAGES SECTION ========= -->
+  <section class="valleys-section" id="packages-slider">
+    <div class="container">
+      <div class="valleys-head">
+        <div>
+          <span class="sub-label">Our Packages</span>
+          <h2>Explore Bhutan's <em>Legendary Valleys</em></h2>
+        </div>
+        <div class="valleys-head-side">
+          <p>Fishing permits, expert guides, premium gear, light snacks &amp; beverages — every journey is tailored around one river valley.</p>
+          <a href={withBase('/packages/')} class="valleys-all">View all packages <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7" /></svg></a>
+        </div>
+      </div>
+
+      <div class="valleys-grid">
+        <a href={withBase('/haa-valley/')} class="valley-panel">
+          <Img src="/assets/images/heroes/haa.webp" alt="Haa Valley fly fishing" loading="lazy" />
+          <div class="vp-shade"></div>
+          <div class="vp-content">
+            <span class="vp-days"><b>7</b> days</span>
+            <span class="vp-tag">High-altitude alpine streams</span>
+            <h3>Haa Valley</h3>
+            <div class="vp-more">
+              <p><em>Season</em>Mar – Oct</p>
+              <p><em>Species</em>Brown · Snow · Rainbow Trout</p>
+              <span class="vp-cta">Explore journey <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7" /></svg></span>
+            </div>
+          </div>
+        </a>
+        <a href={withBase('/paro-valley/')} class="valley-panel">
+          <Img src="/assets/images/photos/full/paro.webp" alt="Paro Valley fly fishing" loading="lazy" />
+          <div class="vp-shade"></div>
+          <div class="vp-content">
+            <span class="vp-days"><b>10</b> days</span>
+            <span class="vp-tag">Gateway to the Himalayas</span>
+            <h3>Paro Valley</h3>
+            <div class="vp-more">
+              <p><em>Season</em>Mar–May · Aug–Oct</p>
+              <p><em>Species</em>Brown · Snow Trout</p>
+              <span class="vp-cta">Explore journey <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7" /></svg></span>
+            </div>
+          </div>
+        </a>
+        <a href={withBase('/phobjikha-valley/')} class="valley-panel">
+          <Img src="/assets/images/photos/full/phob.webp" alt="Phobjikha Valley fly fishing" loading="lazy" />
+          <div class="vp-shade"></div>
+          <div class="vp-content">
+            <span class="vp-days"><b>10</b> days</span>
+            <span class="vp-tag">Glacial valley of the cranes</span>
+            <h3>Phobjikha Valley</h3>
+            <div class="vp-more">
+              <p><em>Season</em>Mar–May · Aug–Oct</p>
+              <p><em>Species</em>Brown Trout</p>
+              <span class="vp-cta">Explore journey <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7" /></svg></span>
+            </div>
+          </div>
+        </a>
+        <a href={withBase('/bumthang-valley/')} class="valley-panel">
+          <Img src="/assets/images/photos/full/bumthang.webp" alt="Bumthang Valley fly fishing" loading="lazy" />
+          <div class="vp-shade"></div>
+          <div class="vp-content">
+            <span class="vp-days"><b>10</b> days</span>
+            <span class="vp-tag">Spiritual heart of the Kingdom</span>
+            <h3>Bumthang Valley</h3>
+            <div class="vp-more">
+              <p><em>Season</em>Mar–May · Aug–Oct</p>
+              <p><em>Species</em>Brown Trout</p>
+              <span class="vp-cta">Explore journey <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7" /></svg></span>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========= BENEFITS OF FLY FISHING ========= -->
+  <section class="benefits-section" id="benefits">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-heading">Why We Fish</h2>
+        <p class="section-body">
+          Fly Fishing is a meditative activity whilst being Nurtured by Nature. It is an art form that requires skills,
+          feel, patience, knowledge and strategy. It is also considered as an Eco-Therapy treatment which involves doing
+          Activities outside in Nature.
+        </p>
+        <div class="mt-40">
+          <span class="sub-label">Eco-Therapy helps</span>
+        </div>
+      </div>
+      <div class="benefits-grid">
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+          </div>
+          <h4>Improve Sleep &amp; Reduce Stress</h4>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M8 14s1.5 2 4 2 4-2 4-2"></path><line x1="9" y1="9" x2="9.01" y2="9"></line><line x1="15" y1="9" x2="15.01" y2="9"></line></svg>
+          </div>
+          <h4>Increases Happiness &amp; Reduce Negative Emotions</h4>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+          </div>
+          <h4>Promote Positive Social Interactions</h4>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg>
+          </div>
+          <h4>Generate a sense of meaning of life</h4>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========= HOW WE WORK (Step By Step) ========= -->
+  <section class="step-by-step-section" id="how-to-book">
+    <div class="container">
+      <div class="sbs-grid">
+
+        <div class="sbs-images">
+          <figure class="sbs-card sbs-card--back">
+            <Img src="/assets/images/brown-trout.webp" alt="Bhutan Fly Fishing" loading="lazy" />
+            <figcaption>Brown Trout</figcaption>
+          </figure>
+          <figure class="sbs-card sbs-card--mid">
+            <Img src="/assets/images/golden-mahseer.webp" alt="Golden Mahseer" loading="lazy" />
+            <figcaption>Golden Mahseer</figcaption>
+          </figure>
+          <figure class="sbs-card sbs-card--front">
+            <Img src="/assets/images/photos/full/img-1541.webp" alt="Bhutan River Fishing" loading="lazy" />
+            <figcaption>Bhutan's rivers</figcaption>
+          </figure>
+        </div>
+
+        <div class="sbs-content">
+          <h2>Tailor Your Fly-Fishing Trip</h2>
+          <p class="sbs-desc">We offer complete guidance and customized itineraries. Experience the soul of Bhutan with
+            our tailored services and pristine river angling.</p>
+
+          <div class="sbs-accordion">
+
+            <!-- Step 1 -->
+            <div class="sbs-item">
+              <div class="sbs-header">
+                <span class="sbs-number">01</span>
+                <h3>Book a Virtual Consultation</h3>
+                <span class="sbs-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"></path></svg></span>
+              </div>
+              <div class="sbs-body">
+                <p>Please fill out the consultation booking form to customize your fly-fishing trip in Bhutan with
+                  Divine Fly Fishing. Provide your name, email, preferred date and time. After submission, you'll
+                  receive a confirmation email.</p>
+              </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="sbs-item">
+              <div class="sbs-header">
+                <span class="sbs-number">02</span>
+                <h3>Connect With Us</h3>
+                <span class="sbs-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"></path></svg></span>
+              </div>
+              <div class="sbs-body">
+                <p>Our experienced staff will schedule a virtual meeting to discuss your fly-fishing trip requirements &
+                  preferences via video call or WhatsApp. Based on your information, we'll offer personalized
+                  recommendations for your trip.</p>
+              </div>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="sbs-item">
+              <div class="sbs-header">
+                <span class="sbs-number">03</span>
+                <h3>Book The Trip</h3>
+                <span class="sbs-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"></path></svg></span>
+              </div>
+              <div class="sbs-body">
+                <p>We'll provide a customized itinerary and pricing after the consultation. Upon approval and payment,
+                  we'll confirm your booking and provide all necessary trip details.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========= FOOTER ========= -->
+  
+
+  <!-- External JavaScript -->
+</Layout>

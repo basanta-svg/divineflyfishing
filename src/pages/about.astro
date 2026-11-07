@@ -1,0 +1,146 @@
+---
+import { withBase } from '../lib/url';
+import Img from '../components/Img.astro';
+import Layout from '../layouts/Layout.astro';
+import PhotoCollage from '../components/PhotoCollage.astro';
+import '../styles/about.css';
+
+const momentPhotos = ['y48c7373', 'y48c5621', 'y48c5039', 'y48c5274', 'y48c5462', 'y48c6082', 'y48c6535', 'y48c7469'];
+
+const pillars = [
+  {
+    title: 'Carbon-Negative Sanctuary',
+    text: 'Our rivers flow through 60% constitutionally mandated forest coverage, ensuring unparalleled purity and biodiversity.',
+  },
+  {
+    title: 'Catch & Release Ethics',
+    text: 'We are dedicated to the survival of the Golden Mahseer and Trout species through 100% Catch & Release practices.',
+  },
+  {
+    title: 'Local Guardianship',
+    text: 'Our guides are the first batch of Bhutanese professionals trained in 2023, offering deep cultural and river wisdom.',
+  },
+];
+
+const checks = [
+  'Expert Region-Specific Guides',
+  'Fly Fishers International Members',
+  'Certified First-Response Safety',
+];
+---
+<Layout title="About Us | Divine Fly Fishing — Fly Fishing Trips to Bhutan" description="Learn about Singhey Gyamtsho, founder of Divine Fly Fishing, and our mission to provide sustainable, world-class fly fishing in Bhutan." current="about">
+
+  <!-- ========= HERO ========= -->
+  <header class="ab-hero" style={`--hero: url('${withBase('/assets/images/heroes/about.webp')}');`}>
+    <div class="ab-hero-inner container slide-up">
+      <nav class="breadcrumb">
+        <a href={withBase('/')}>Home</a><span>/</span><span style="color: #fdfcfb;">About Us</span>
+      </nav>
+      <span class="sub-label">Our Story</span>
+      <h1>Born on the water, <em>guided by the rivers</em></h1>
+      <p>Conservation-led fly fishing in the last Himalayan Kingdom — led by Bhutanese guides who grew up beside these rivers.</p>
+    </div>
+  </header>
+
+  <!-- ========= FOUNDER ========= -->
+  <section class="ab-founder">
+    <div class="container">
+      <div class="ab-founder-grid">
+        <figure class="ab-portrait">
+          <div class="ab-portrait-frame">
+            <Img src="/assets/images/singhey-gyamtsho.webp" alt="Singhey Gyamtsho — Founder & Master Fly Fisherman" />
+          </div>
+          <figcaption>
+            <span class="ab-years">15+</span>
+            <span>Years of<br />discovery</span>
+          </figcaption>
+        </figure>
+
+        <div class="ab-founder-text">
+          <span class="sub-label">The Visionary Behind Divine</span>
+          <h2>Singhey Gyamtsho</h2>
+          <blockquote>
+            “There are many reasons why I choose to fish. Revealing the mystery of what lies beneath the darkest reaches of the river temporarily satisfies an insatiable curiosity...”
+          </blockquote>
+          <div class="ab-bio">
+            <p>Singhey's heart has always belonged to the water. In 2023, following the introduction of revolutionary sustainable fishing regulations in Bhutan, he founded <strong>Divine Flyfishing</strong>. His mission is to share the thrill of catching the legendary Golden Mahseer and the elusive Snow Trout with the world, all while preserving Bhutan's natural sanctuary.</p>
+            <p>As a registered Fishing Guide with the <strong>Fly Fishers International Guide Association</strong>, Singhey blends local wisdom with international standards of excellence.</p>
+          </div>
+          <div class="ab-credential">
+            <Img src="/assets/images/ffi-council-logo.webp" alt="Fly Fishers International Guides Association" />
+            <span>Registered guide · Fly Fishers International</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========= MOMENTS (interactive photo arc) ========= -->
+  <section class="ab-moments">
+    <div class="container">
+      <div class="ab-head ab-head--center">
+        <span class="sub-label">Moments from the River</span>
+        <h2>Photographs from <em>our journeys</em></h2>
+        <p>A few frames from the rivers, the camps and the people we fish with.</p>
+      </div>
+      <PhotoCollage images={momentPhotos} cols={4} theme="dark" alt="Fly fishing journey in Bhutan" />
+    </div>
+  </section>
+
+  <!-- ========= MISSION ========= -->
+  <section class="ab-mission">
+    <div class="container">
+      <div class="ab-mission-grid">
+        <div class="ab-head">
+          <span class="sub-label">Sustainability First</span>
+          <h2>Connecting with the <em>Pristine</em></h2>
+          <p>Divine Flyfishing is a Department of Tourism certified operator, pioneering conservation-led angling in the world's only carbon-negative nation.</p>
+        </div>
+        <ol class="ab-pillars">
+          {pillars.map((p, i) => (
+            <li>
+              <span class="ab-num">{String(i + 1).padStart(2, '0')}</span>
+              <div>
+                <h3>{p.title}</h3>
+                <p>{p.text}</p>
+              </div>
+            </li>
+          ))}
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========= TEAM & SAFETY ========= -->
+  <section class="ab-team">
+    <div class="ab-team-photo">
+      <Img src="/assets/images/photos/full/y48c5621.webp" alt="Our elite guiding team on the Bhutanese rivers" loading="lazy" />
+    </div>
+    <div class="container">
+      <div class="ab-team-card">
+        <span class="sub-label">Elite Logistics</span>
+        <h2>Our Team &amp; <em>Professional Partners</em></h2>
+        <p>Safety is our cornerstone. For float trips, we partner with specialized rafting firms boasting over a decade of Class IV-V experience, ensuring your journey is as secure as it is breathtaking.</p>
+        <ul>
+          {checks.map((t) => (
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5" /></svg>
+              {t}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========= CTA ========= -->
+  <section class="ab-cta">
+    <div class="container">
+      <h2>Ready to fish the <em>last Himalayan Kingdom?</em></h2>
+      <div class="ab-cta-actions">
+        <a href={withBase('/packages/')} class="ab-btn ab-btn--solid">View packages</a>
+        <a href={withBase('/contact/')} class="ab-btn ab-btn--ghost">Plan your trip</a>
+      </div>
+    </div>
+  </section>
+</Layout>

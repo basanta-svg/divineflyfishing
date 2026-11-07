@@ -1,0 +1,317 @@
+---
+import { withBase } from '../lib/url';
+import '../styles/gallery.css';
+import Img from '../components/Img.astro';
+import Layout from '../layouts/Layout.astro';
+---
+<Layout title="Gallery | Divine Fly Fishing — Snapshots of Bhutan's Rivers" description="A visual journey through Bhutan's pristine rivers and legendary fly fishing spots. Experience the kingdom through our gallery." current="gallery">
+<!-- ========= GALLERY HERO ========= -->
+  <header class="page-hero" style={`background-image: url('${withBase('/assets/images/heroes/gallery.webp')}');`}>
+    <div class="hero-overlay"></div>
+    <div class="container slide-up">
+      <h1>Gallery</h1>
+      <nav class="breadcrumb">
+        <a href={withBase('/')}>Home</a>
+        <span>/</span>
+        <span style="color: #fdfcfb;">Gallery</span>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ========= GALLERY GRID ========= -->
+  <section class="gallery-listing">
+    <div class="container">
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <Img src="/assets/images/heroes/haa.webp" full="/assets/images/heroes/haa.webp" alt="Haa Valley" loading="lazy" />
+        </div>
+        <div class="gallery-item">
+          <Img src="/assets/images/photos/thumb/y48c5039.webp" full="/assets/images/photos/full/y48c5039.webp" alt="Fly fishing in Bhutan" loading="lazy" />
+        </div>
+        <div class="gallery-item gallery-video" data-video={withBase('/assets/videos/clip-1.mp4')} data-type="video/mp4">
+          <video src={withBase('/assets/videos/clip-1.mp4#t=0.6')} muted playsinline preload="metadata" aria-label="Video 1"></video>
+          <span class="video-play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+        </div>
+        <div class="gallery-item">
+          <Img src="/assets/images/photos/thumb/y48c5057.webp" full="/assets/images/photos/full/y48c5057.webp" alt="Fly fishing in Bhutan" loading="lazy" />
+        </div>
+        <div class="gallery-item">
+          <Img src="/assets/images/photos/thumb/y48c5274.webp" full="/assets/images/photos/full/y48c5274.webp" alt="Fly fishing in Bhutan" loading="lazy" />
+        </div>
+        <div class="gallery-item">
+          <Img src="/assets/images/photos/thumb/y48c5329.webp" full="/assets/images/photos/full/y48c5329.webp" alt="Fly fishing in Bhutan" loading="lazy" />
+        </div>
+        <div class="gallery-item">
+          <Img src="/assets/images/photos/thumb/y48c5462.webp" full="/assets/images/photos/full/y48c5462.webp" alt="Fly fishing in Bhutan" loading="lazy" />
+        </div>
+        <div class="gallery-item">
+          <Img src="/assets/images/photos/thumb/y48c5621.webp" full="/assets/images/photos/full/y48c5621.webp" alt="Fly fishing in Bhutan" loading="lazy" />
+        </div>
+        <div class="gallery-item">
+          <Img src="/assets/images/photos/thumb/y48c5698.webp" full="/assets/images/photos/full/y48c5698.webp" alt="Fly fishing in Bhutan" loading="lazy" />
+        </div>
+        <div class="gallery-item">
+          <Img src="/assets/images/photos/thumb/y48c5853.webp" full="/assets/images/photos/full/y48c5853.webp" alt="Fly fishing in Bhutan" loading="lazy" />
+        </div>
+        <div class="gallery-item">
+          <Img src="/assets/images/photos/thumb/y48c5867.webp" full="/assets/images/photos/full/y48c5867.webp" alt="Fly fishing in Bhutan" loading="lazy" />
+        </div>
+        <div class="gallery-item gallery-video" data-video={withBase('/assets/videos/clip-2.mp4')} data-type="video/mp4">
+          <video src={withBase('/assets/videos/clip-2.mp4#t=0.6')} muted playsinline preload="metadata" aria-label="Video 2"></video>
+          <span class="video-play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+        </div>
+        <div class="gallery-item">
+          <Img src="/assets/images/photos/thumb/y48c6082.webp" full="/assets/images/photos/full/y48c6082.webp" alt="Fly fishing in Bhutan" loading="lazy" />
+        </div>
+        <div class="gallery-item">
+          <Img src="/assets/images/photos/thumb/y48c6509.webp" full="/assets/images/photos/full/y48c6509.webp" alt="Fly fishing in Bhutan" loading="lazy" />
+        </div>
+        <div class="gallery-item">
+          <Img src="/assets/images/photos/thumb/y48c6535.webp" full="/assets/images/photos/full/y48c6535.webp" alt="Fly fishing in Bhutan" loading="lazy" />
+        </div>
+        <div class="gallery-item">
+          <Img src="/assets/images/photos/thumb/y48c6888.webp" full="/assets/images/photos/full/y48c6888.webp" alt="Fly fishing in Bhutan" loading="lazy" />
+        </div>
+        <div class="gallery-item">
+          <Img src="/assets/images/photos/thumb/y48c7029.webp" full="/assets/images/photos/full/y48c7029.webp" alt="Fly fishing in Bhutan" loading="lazy" />
+        </div>
+        <div class="gallery-item">
+          <Img src="/assets/images/photos/thumb/y48c7373.webp" full="/assets/images/photos/full/y48c7373.webp" alt="Fly fishing in Bhutan" loading="lazy" />
+        </div>
+        <div class="gallery-item">
+          <Img src="/assets/images/photos/thumb/y48c7384.webp" full="/assets/images/photos/full/y48c7384.webp" alt="Fly fishing in Bhutan" loading="lazy" />
+        </div>
+        <div class="gallery-item">
+          <Img src="/assets/images/photos/thumb/y48c7469.webp" full="/assets/images/photos/full/y48c7469.webp" alt="Fly fishing in Bhutan" loading="lazy" />
+        </div>
+        <div class="gallery-item">
+          <Img src="/assets/images/photos/thumb/y48c7630.webp" full="/assets/images/photos/full/y48c7630.webp" alt="Fly fishing in Bhutan" loading="lazy" />
+        </div>
+        <div class="gallery-item">
+          <Img src="/assets/images/photos/thumb/y48c8275.webp" full="/assets/images/photos/full/y48c8275.webp" alt="Fly fishing in Bhutan" loading="lazy" />
+        </div>
+        <div class="gallery-item gallery-video" data-video={withBase('/assets/videos/clip-3.mp4')} data-type="video/mp4">
+          <video src={withBase('/assets/videos/clip-3.mp4#t=0.6')} muted playsinline preload="metadata" aria-label="Video 3"></video>
+          <span class="video-play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+        </div>
+        <div class="gallery-item">
+          <Img src="/assets/images/photos/thumb/y48c8673.webp" full="/assets/images/photos/full/y48c8673.webp" alt="Fly fishing in Bhutan" loading="lazy" />
+        </div>
+        <div class="gallery-item">
+          <Img src="/assets/images/photos/thumb/y48c8723.webp" full="/assets/images/photos/full/y48c8723.webp" alt="Fly fishing in Bhutan" loading="lazy" />
+        </div>
+        <div class="gallery-item">
+          <Img src="/assets/images/photos/thumb/y48c8787.webp" full="/assets/images/photos/full/y48c8787.webp" alt="Fly fishing in Bhutan" loading="lazy" />
+        </div>
+        <div class="gallery-item">
+          <Img src="/assets/images/photos/thumb/y48c8827.webp" full="/assets/images/photos/full/y48c8827.webp" alt="Fly fishing in Bhutan" loading="lazy" />
+        </div>
+        <div class="gallery-item">
+          <Img src="/assets/images/photos/thumb/y48c8845.webp" full="/assets/images/photos/full/y48c8845.webp" alt="Fly fishing in Bhutan" loading="lazy" />
+        </div>
+        <div class="gallery-item">
+          <Img src="/assets/images/photos/thumb/y48c8945.webp" full="/assets/images/photos/full/y48c8945.webp" alt="Fly fishing in Bhutan" loading="lazy" />
+        </div>
+        <div class="gallery-item">
+          <Img src="/assets/images/photos/thumb/y48c8972.webp" full="/assets/images/photos/full/y48c8972.webp" alt="Fly fishing in Bhutan" loading="lazy" />
+        </div>
+        <div class="gallery-item">
+          <Img src="/assets/images/photos/thumb/bumthang.webp" full="/assets/images/photos/full/bumthang.webp" alt="Fly fishing in Bhutan" loading="lazy" />
+        </div>
+        <div class="gallery-item">
+          <Img src="/assets/images/photos/thumb/paro.webp" full="/assets/images/photos/full/paro.webp" alt="Fly fishing in Bhutan" loading="lazy" />
+        </div>
+        <div class="gallery-item">
+          <Img src="/assets/images/photos/thumb/phob.webp" full="/assets/images/photos/full/phob.webp" alt="Fly fishing in Bhutan" loading="lazy" />
+        </div>
+        <div class="gallery-item">
+          <Img src="/assets/images/photos/thumb/about.webp" full="/assets/images/photos/full/about.webp" alt="Fly fishing in Bhutan" loading="lazy" />
+        </div>
+        <div class="gallery-item">
+          <Img src="/assets/images/photos/thumb/art-of-connection-2.webp" full="/assets/images/photos/full/art-of-connection-2.webp" alt="Fly fishing in Bhutan" loading="lazy" />
+        </div>
+        <div class="gallery-item gallery-video" data-video={withBase('/assets/videos/clip-4.mp4')} data-type="video/mp4">
+          <video src={withBase('/assets/videos/clip-4.mp4#t=0.6')} muted playsinline preload="metadata" aria-label="Video 4"></video>
+          <span class="video-play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+        </div>
+        <div class="gallery-item">
+          <Img src="/assets/images/photos/thumb/brown-trout.webp" full="/assets/images/photos/full/brown-trout.webp" alt="Fly fishing in Bhutan" loading="lazy" />
+        </div>
+        <div class="gallery-item">
+          <Img src="/assets/images/photos/thumb/home-footer-image-2.webp" full="/assets/images/photos/full/home-footer-image-2.webp" alt="Fly fishing in Bhutan" loading="lazy" />
+        </div>
+        <div class="gallery-item">
+          <Img src="/assets/images/photos/thumb/snow-trout-2.webp" full="/assets/images/photos/full/snow-trout-2.webp" alt="Fly fishing in Bhutan" loading="lazy" />
+        </div>
+        <div class="gallery-item">
+          <Img src="/assets/images/photos/thumb/img-0684.webp" full="/assets/images/photos/full/img-0684.webp" alt="Fly fishing in Bhutan" loading="lazy" />
+        </div>
+        <div class="gallery-item">
+          <Img src="/assets/images/photos/thumb/img-0933.webp" full="/assets/images/photos/full/img-0933.webp" alt="Fly fishing in Bhutan" loading="lazy" />
+        </div>
+        <div class="gallery-item">
+          <Img src="/assets/images/photos/thumb/img-1426.webp" full="/assets/images/photos/full/img-1426.webp" alt="Fly fishing in Bhutan" loading="lazy" />
+        </div>
+        <div class="gallery-item">
+          <Img src="/assets/images/photos/thumb/img-1430.webp" full="/assets/images/photos/full/img-1430.webp" alt="Fly fishing in Bhutan" loading="lazy" />
+        </div>
+        <div class="gallery-item">
+          <Img src="/assets/images/photos/thumb/img-1444.webp" full="/assets/images/photos/full/img-1444.webp" alt="Fly fishing in Bhutan" loading="lazy" />
+        </div>
+        <div class="gallery-item">
+          <Img src="/assets/images/photos/thumb/img-1458.webp" full="/assets/images/photos/full/img-1458.webp" alt="Fly fishing in Bhutan" loading="lazy" />
+        </div>
+        <div class="gallery-item">
+          <Img src="/assets/images/photos/thumb/img-1475.webp" full="/assets/images/photos/full/img-1475.webp" alt="Fly fishing in Bhutan" loading="lazy" />
+        </div>
+        <div class="gallery-item">
+          <Img src="/assets/images/photos/thumb/img-1506.webp" full="/assets/images/photos/full/img-1506.webp" alt="Fly fishing in Bhutan" loading="lazy" />
+        </div>
+        <div class="gallery-item">
+          <Img src="/assets/images/photos/thumb/img-1525.webp" full="/assets/images/photos/full/img-1525.webp" alt="Fly fishing in Bhutan" loading="lazy" />
+        </div>
+        <div class="gallery-item">
+          <Img src="/assets/images/photos/thumb/img-1541.webp" full="/assets/images/photos/full/img-1541.webp" alt="Fly fishing in Bhutan" loading="lazy" />
+        </div>
+        <div class="gallery-item">
+          <Img src="/assets/images/photos/thumb/img-1566.webp" full="/assets/images/photos/full/img-1566.webp" alt="Fly fishing in Bhutan" loading="lazy" />
+        </div>
+        <div class="gallery-item gallery-video" data-video={withBase('/assets/videos/clip-5.mp4')} data-type="video/mp4">
+          <video src={withBase('/assets/videos/clip-5.mp4#t=0.6')} muted playsinline preload="metadata" aria-label="Video 5"></video>
+          <span class="video-play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+        </div>
+        <div class="gallery-item">
+          <Img src="/assets/images/photos/thumb/img-1567.webp" full="/assets/images/photos/full/img-1567.webp" alt="Fly fishing in Bhutan" loading="lazy" />
+        </div>
+        <div class="gallery-item">
+          <Img src="/assets/images/photos/thumb/img-1607.webp" full="/assets/images/photos/full/img-1607.webp" alt="Fly fishing in Bhutan" loading="lazy" />
+        </div>
+        <div class="gallery-item">
+          <Img src="/assets/images/photos/thumb/img-1618.webp" full="/assets/images/photos/full/img-1618.webp" alt="Fly fishing in Bhutan" loading="lazy" />
+        </div>
+        <div class="gallery-item">
+          <Img src="/assets/images/photos/thumb/img-1654.webp" full="/assets/images/photos/full/img-1654.webp" alt="Fly fishing in Bhutan" loading="lazy" />
+        </div>
+        <div class="gallery-item">
+          <Img src="/assets/images/photos/thumb/img-1656.webp" full="/assets/images/photos/full/img-1656.webp" alt="Fly fishing in Bhutan" loading="lazy" />
+        </div>
+        <div class="gallery-item">
+          <Img src="/assets/images/photos/thumb/img-1925.webp" full="/assets/images/photos/full/img-1925.webp" alt="Fly fishing in Bhutan" loading="lazy" />
+        </div>
+        <div class="gallery-item">
+          <Img src="/assets/images/photos/thumb/img-1947.webp" full="/assets/images/photos/full/img-1947.webp" alt="Fly fishing in Bhutan" loading="lazy" />
+        </div>
+        <div class="gallery-item">
+          <Img src="/assets/images/photos/thumb/img-1982.webp" full="/assets/images/photos/full/img-1982.webp" alt="Fly fishing in Bhutan" loading="lazy" />
+        </div>
+        <div class="gallery-item">
+          <Img src="/assets/images/photos/thumb/img-2034.webp" full="/assets/images/photos/full/img-2034.webp" alt="Fly fishing in Bhutan" loading="lazy" />
+        </div>
+        <div class="gallery-item">
+          <Img src="/assets/images/photos/thumb/img-2043.webp" full="/assets/images/photos/full/img-2043.webp" alt="Fly fishing in Bhutan" loading="lazy" />
+        </div>
+        <div class="gallery-item">
+          <Img src="/assets/images/photos/thumb/img-2051.webp" full="/assets/images/photos/full/img-2051.webp" alt="Fly fishing in Bhutan" loading="lazy" />
+        </div>
+        <div class="gallery-item">
+          <Img src="/assets/images/photos/thumb/img-2236.webp" full="/assets/images/photos/full/img-2236.webp" alt="Fly fishing in Bhutan" loading="lazy" />
+        </div>
+        <div class="gallery-item">
+          <Img src="/assets/images/photos/thumb/img-2443.webp" full="/assets/images/photos/full/img-2443.webp" alt="Fly fishing in Bhutan" loading="lazy" />
+        </div>
+        <div class="gallery-item">
+          <Img src="/assets/images/photos/thumb/img-2799.webp" full="/assets/images/photos/full/img-2799.webp" alt="Fly fishing in Bhutan" loading="lazy" />
+        </div>
+        <div class="gallery-item">
+          <Img src="/assets/images/photos/thumb/img-2800.webp" full="/assets/images/photos/full/img-2800.webp" alt="Fly fishing in Bhutan" loading="lazy" />
+        </div>
+        <div class="gallery-item">
+          <Img src="/assets/images/photos/thumb/img-2812.webp" full="/assets/images/photos/full/img-2812.webp" alt="Fly fishing in Bhutan" loading="lazy" />
+        </div>
+        <div class="gallery-item">
+          <Img src="/assets/images/photos/thumb/img-2922.webp" full="/assets/images/photos/full/img-2922.webp" alt="Fly fishing in Bhutan" loading="lazy" />
+        </div>
+        <div class="gallery-item">
+          <Img src="/assets/images/photos/thumb/img-3035.webp" full="/assets/images/photos/full/img-3035.webp" alt="Fly fishing in Bhutan" loading="lazy" />
+        </div>
+        <div class="gallery-item">
+          <Img src="/assets/images/photos/thumb/img-3235.webp" full="/assets/images/photos/full/img-3235.webp" alt="Fly fishing in Bhutan" loading="lazy" />
+        </div>
+        <div class="gallery-item">
+          <Img src="/assets/images/photos/thumb/img-3240.webp" full="/assets/images/photos/full/img-3240.webp" alt="Fly fishing in Bhutan" loading="lazy" />
+        </div>
+        <div class="gallery-item">
+          <Img src="/assets/images/photos/thumb/img-3290.webp" full="/assets/images/photos/full/img-3290.webp" alt="Fly fishing in Bhutan" loading="lazy" />
+        </div>
+        <div class="gallery-item">
+          <Img src="/assets/images/photos/thumb/img-3292.webp" full="/assets/images/photos/full/img-3292.webp" alt="Fly fishing in Bhutan" loading="lazy" />
+        </div>
+        <div class="gallery-item">
+          <Img src="/assets/images/photos/thumb/img-3294.webp" full="/assets/images/photos/full/img-3294.webp" alt="Fly fishing in Bhutan" loading="lazy" />
+        </div>
+        <div class="gallery-item">
+          <Img src="/assets/images/photos/thumb/img-3301.webp" full="/assets/images/photos/full/img-3301.webp" alt="Fly fishing in Bhutan" loading="lazy" />
+        </div>
+        <div class="gallery-item">
+          <Img src="/assets/images/photos/thumb/img-8310.webp" full="/assets/images/photos/full/img-8310.webp" alt="Fly fishing in Bhutan" loading="lazy" />
+        </div>
+        <div class="gallery-item">
+          <Img src="/assets/images/photos/thumb/img-8329.webp" full="/assets/images/photos/full/img-8329.webp" alt="Fly fishing in Bhutan" loading="lazy" />
+        </div>
+        <div class="gallery-item">
+          <Img src="/assets/images/photos/thumb/img-9591.webp" full="/assets/images/photos/full/img-9591.webp" alt="Fly fishing in Bhutan" loading="lazy" />
+        </div>
+        <div class="gallery-item">
+          <Img src="/assets/images/photos/thumb/img-9592.webp" full="/assets/images/photos/full/img-9592.webp" alt="Fly fishing in Bhutan" loading="lazy" />
+        </div>
+        <div class="gallery-item">
+          <Img src="/assets/images/photos/thumb/img-9769-edited.webp" full="/assets/images/photos/full/img-9769-edited.webp" alt="Fly fishing in Bhutan" loading="lazy" />
+        </div>
+        <div class="gallery-item">
+          <Img src="/assets/images/photos/thumb/1.webp" full="/assets/images/photos/full/1.webp" alt="Fly fishing in Bhutan" loading="lazy" />
+        </div>
+        <div class="gallery-item">
+          <Img src="/assets/images/photos/thumb/2.webp" full="/assets/images/photos/full/2.webp" alt="Fly fishing in Bhutan" loading="lazy" />
+        </div>
+        <div class="gallery-item">
+          <Img src="/assets/images/photos/thumb/3.webp" full="/assets/images/photos/full/3.webp" alt="Fly fishing in Bhutan" loading="lazy" />
+        </div>
+        <div class="gallery-item">
+          <Img src="/assets/images/photos/thumb/photo-2023-03-08-06-13-12-pm.webp" full="/assets/images/photos/full/photo-2023-03-08-06-13-12-pm.webp" alt="Fly fishing in Bhutan" loading="lazy" />
+        </div>
+        <div class="gallery-item">
+          <Img src="/assets/images/photos/thumb/photo-2023-09-12-22-26-04.webp" full="/assets/images/photos/full/photo-2023-09-12-22-26-04.webp" alt="Fly fishing in Bhutan" loading="lazy" />
+        </div>
+        <div class="gallery-item">
+          <Img src="/assets/images/photos/thumb/whatsapp-image-2023-09-20-at-16-50-38.webp" full="/assets/images/photos/full/whatsapp-image-2023-09-20-at-16-50-38.webp" alt="Fly fishing in Bhutan" loading="lazy" />
+        </div>
+        <div class="gallery-item">
+          <Img src="/assets/images/photos/thumb/whatsapp-image-2023-09-20-at-16-50-39.webp" full="/assets/images/photos/full/whatsapp-image-2023-09-20-at-16-50-39.webp" alt="Fly fishing in Bhutan" loading="lazy" />
+        </div>
+        <div class="gallery-item">
+          <Img src="/assets/images/photos/thumb/whatsapp-image-2023-09-20-at-16-50-40.webp" full="/assets/images/photos/full/whatsapp-image-2023-09-20-at-16-50-40.webp" alt="Fly fishing in Bhutan" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========= FOOTER ========= -->
+  
+
+  <!-- ========= IMAGE MODAL LIGHTBOX ========= -->
+  <div id="imageModal" class="image-modal">
+    <button class="modal-close" id="modalClose" aria-label="Close">&times;</button>
+    <button class="modal-nav modal-prev" id="modalPrev" aria-label="Previous image">&#10094;</button>
+    <div class="modal-content">
+      <img id="modalImg" src="" alt="">
+      <video id="modalVideo" controls playsinline></video>
+    </div>
+    <button class="modal-nav modal-next" id="modalNext" aria-label="Next image">&#10095;</button>
+    <div class="modal-counter" id="modalCounter"></div>
+  </div>
+</Layout>
+
+
+<script>
+  import '../scripts/gallery.js';
+</script>

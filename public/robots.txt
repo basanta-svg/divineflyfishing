@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://basanta-svg.github.io/divineflyfishing/sitemap-index.xml

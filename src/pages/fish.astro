@@ -1,0 +1,117 @@
+---
+import { withBase } from '../lib/url';
+import Img from '../components/Img.astro';
+import Layout from '../layouts/Layout.astro';
+---
+<Layout title="Native Fish Species | Divine Fly Fishing — Fly Fishing Trips to Bhutan" description="Discover the legendary fish species of Bhutan. Golden Mahseer, Brown Trout, and Snow Trout in the pristine Himalayan rivers." current="fish">
+<!-- ========= FISH HERO ========= -->
+  <header class="page-hero" style={`background-image: url('${withBase('/assets/images/heroes/fish.webp')}');`}>
+    <div class="hero-overlay"></div>
+    <div class="container slide-up">
+      <h1>Our Fish</h1>
+      <nav class="breadcrumb">
+        <a href={withBase('/')}>Home</a>
+        <span>/</span>
+        <span style="color: #fdfcfb;">Fish</span>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ========= FISH GRID ========= -->
+  <section class="finest" style="padding: 100px 0;">
+    <div class="container">
+      <div class="section-header">
+        <span class="sub-label">The Wild Inhabitants</span>
+        <h2 class="section-heading">Native Species of Bhutan</h2>
+        <p class="section-body">
+          From the legendary Golden Mahseer to the high-altitude Snow Trout, Bhutan offers a unique diversity of species
+          for the passionate fly fisherman.
+        </p>
+      </div>
+
+      <div class="grid-3" style="margin-top: 60px;">
+        <!-- Card 1: Golden Mahseer -->
+        <div class="experience-card">
+          <div class="card-image-content">
+            <Img class="card-bg-img" src="/assets/images/golden-mahseer.webp" alt="Golden Mahseer" />
+            <div class="card-overlay">
+              <div class="card-details">
+                <div class="card-location">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                  <span>Southern Rivers, Bhutan</span>
+                </div>
+                <h3>Golden Mahseer <br /><span>Fly Fishing</span></h3>
+                <div class="card-line"></div>
+                <p>The legendary tiger of the Himalayan rivers, offering the ultimate challenge for any angler.</p>
+                <a href={withBase('/golden-mahseer/')} class="card-cta-modern">
+                  <span>Learn More</span>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Card 2: Brown Trout -->
+        <div class="experience-card">
+          <div class="card-image-content">
+            <Img class="card-bg-img" src="/assets/images/brown-trout.webp" alt="Brown Trout" />
+            <div class="card-overlay">
+              <div class="card-details">
+                <div class="card-location">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                  <span>Bumthang &amp; Phobjikha Valley</span>
+                </div>
+                <h3>Brown Trout <br /><span>Fly Fishing</span></h3>
+                <div class="card-line"></div>
+                <p>Cast your fly into the crystal clear, high-altitude streams for a truly serene and rewarding catch.
+                </p>
+                <a href={withBase('/brown-trout/')} class="card-cta-modern">
+                  <span>Learn More</span>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Card 3: Snow Trout -->
+        <div class="experience-card">
+          <div class="card-image-content">
+            <Img class="card-bg-img" src="/assets/images/snow-trout.webp" alt="Snow Trout" />
+            <div class="card-overlay">
+              <div class="card-details">
+                <div class="card-location">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                  <span>Haa &amp; Paro Valley</span>
+                </div>
+                <h3>Snow Trout <br /><span>Fly Fishing</span></h3>
+                <div class="card-line"></div>
+                <p>Discover the unique Snow Trout in the pristine, glacier-fed waters of Bhutan's hidden valleys.</p>
+                <a href={withBase('/snow-trout/')} class="card-cta-modern">
+                  <span>Learn More</span>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========= FOOTER ========= -->
+</Layout>

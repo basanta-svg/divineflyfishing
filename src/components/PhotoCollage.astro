@@ -1,0 +1,23 @@
+---
+import Img from './Img.astro';
+import '../styles/photocollage.css';
+
+interface Props {
+  images: string[];
+  cols?: number;
+  theme?: 'light' | 'dark';
+  alt?: string;
+}
+const { images, cols = 3, theme = 'light', alt = 'Fly fishing in Bhutan' } = Astro.props;
+
+// Hand-placed look: each print gets its own tilt, vertical nudge and optional tape
+const tilts = [-4, 3, -2, 4, -3, 2, -5, 3, -2, 4];
+const nudges = [0, 26, 8, 34, 14, 0, 22, 4, 30, 10];
+---
+<div class={`collage collage--${theme}`} style={`--cols:${cols}`}>
+  {images.map((src, i) => (
+    <figure class={`print${i % 3 === 0 ? ' print--tape' : ''}`} style={`--r:${tilts[i % tilts.length]}deg; --y:${nudges[i % nudges.length]}px;`}>
+      <Img src={`/assets/images/photos/full/${src}.webp`} alt={`${alt} — photo ${i + 1}`} loading="lazy" decoding="async" />
+    </figure>
+  ))}
+</div>

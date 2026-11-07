@@ -1,0 +1,96 @@
+---
+import { withBase } from '../lib/url';
+import Img from '../components/Img.astro';
+import Layout from '../layouts/Layout.astro';
+import '../styles/packages.css';
+---
+<Layout title="Fly Fishing Packages | Divine Fly Fishing — Fly Fishing Trips to Bhutan" description="Explore our curated fly fishing packages in Bhutan. From Haa Valley to Bumthang, discover the best angling spots in the Himalayas." current="packages">
+<!-- ========= PACKAGES HERO ========= -->
+  <header class="page-hero" style={`background-image: url('${withBase('/assets/images/heroes/packages.webp')}');`}>
+    <div class="hero-overlay"></div>
+    <div class="container slide-up">
+      <h1>Our Packages</h1>
+      <nav class="breadcrumb">
+        <a href={withBase('/')}>Home</a>
+        <span>/</span>
+        <span style="color: #fdfcfb;">Packages</span>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ========= PACKAGES GRID ========= -->
+  <section class="valleys-section" id="packages-listing">
+    <div class="container">
+      <div class="valleys-head">
+        <div>
+          <span class="sub-label">Select Your Adventure</span>
+          <h2>Valley-Specific <em>Experiences</em></h2>
+        </div>
+        <div class="valleys-head-side">
+          <p>Our packages are designed to give you deep access to specific regions, each offering unique river systems and species diversity.</p>
+        </div>
+      </div>
+
+      <div class="valleys-grid">
+        <a href={withBase('/haa-valley/')} class="valley-panel">
+          <Img src="/assets/images/heroes/haa.webp" alt="Haa Valley fly fishing" loading="lazy" />
+          <div class="vp-shade"></div>
+          <div class="vp-content">
+            <span class="vp-days"><b>7</b> days</span>
+            <span class="vp-tag">High-altitude alpine streams</span>
+            <h3>Haa Valley</h3>
+            <div class="vp-more">
+              <p><em>Season</em>Mar – Oct</p>
+              <p><em>Species</em>Brown · Snow · Rainbow Trout</p>
+              <span class="vp-cta">View itinerary <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7" /></svg></span>
+            </div>
+          </div>
+        </a>
+        <a href={withBase('/paro-valley/')} class="valley-panel">
+          <Img src="/assets/images/photos/full/paro.webp" alt="Paro Valley fly fishing" loading="lazy" />
+          <div class="vp-shade"></div>
+          <div class="vp-content">
+            <span class="vp-days"><b>10</b> days</span>
+            <span class="vp-tag">Gateway to the Himalayas</span>
+            <h3>Paro Valley</h3>
+            <div class="vp-more">
+              <p><em>Season</em>Mar–May · Aug–Oct</p>
+              <p><em>Species</em>Brown · Snow Trout</p>
+              <span class="vp-cta">View itinerary <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7" /></svg></span>
+            </div>
+          </div>
+        </a>
+        <a href={withBase('/phobjikha-valley/')} class="valley-panel">
+          <Img src="/assets/images/photos/full/phob.webp" alt="Phobjikha Valley fly fishing" loading="lazy" />
+          <div class="vp-shade"></div>
+          <div class="vp-content">
+            <span class="vp-days"><b>10</b> days</span>
+            <span class="vp-tag">Glacial valley of the cranes</span>
+            <h3>Phobjikha Valley</h3>
+            <div class="vp-more">
+              <p><em>Season</em>Mar–May · Aug–Oct</p>
+              <p><em>Species</em>Brown Trout</p>
+              <span class="vp-cta">View itinerary <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7" /></svg></span>
+            </div>
+          </div>
+        </a>
+        <a href={withBase('/bumthang-valley/')} class="valley-panel">
+          <Img src="/assets/images/photos/full/bumthang.webp" alt="Bumthang Valley fly fishing" loading="lazy" />
+          <div class="vp-shade"></div>
+          <div class="vp-content">
+            <span class="vp-days"><b>10</b> days</span>
+            <span class="vp-tag">Spiritual heart of the Kingdom</span>
+            <h3>Bumthang Valley</h3>
+            <div class="vp-more">
+              <p><em>Season</em>Mar–May · Aug–Oct</p>
+              <p><em>Species</em>Brown Trout</p>
+              <span class="vp-cta">View itinerary <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7" /></svg></span>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========= FOOTER ========= -->
+</Layout>

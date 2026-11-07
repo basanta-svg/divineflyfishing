@@ -1,0 +1,74 @@
+---
+import { withBase } from '../lib/url';
+interface Props {
+  current?: 'home' | 'about' | 'fish' | 'packages' | 'gallery' | 'contact' | '';
+}
+const { current = '' } = Astro.props;
+const homeHref = current === 'home' ? '#home' : withBase('/#home');
+---
+<nav class="navbar" id="navbar">
+    <div class="navbar-inner">
+
+      <!-- Hamburger (Mobile) - Now on Left -->
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <!-- Centered Logo Group -->
+      <div class="navbar-brand-center">
+        <!-- Partner Logo -->
+        <a href="https://www.flyfishersinternational.org/" class="navbar-partner" target="_blank" rel="noopener noreferrer">
+          <img src={withBase('/assets/images/header_logo.svg')} width="213" height="51" alt="Partner Logo — Fly Fishing International" />
+        </a>
+
+        <span class="logo-divider"></span>
+
+        <!-- Main Logo -->
+        <a href={current === 'home' ? '#' : withBase('/')} class="navbar-logo">
+          <img src={withBase('/assets/images/dff-logo.svg')} width="1982" height="1331" alt="Divine Fly Fishing Logo" />
+        </a>
+      </div>
+
+      <!-- Center Navigation Links -->
+      <ul class="nav-links" id="navLinks">
+        <li><a href={homeHref} class={current === 'home' ? 'active' : undefined}>Home</a></li>
+        <li><a href={withBase('/about/')} class={current === 'about' ? 'active' : undefined}>About</a></li>
+        <li><a href={withBase('/fish/')} class={current === 'fish' ? 'active' : undefined}>Fish</a></li>
+        <li><a href={withBase('/packages/')} class={current === 'packages' ? 'active' : undefined}>Packages</a></li>
+        <li><a href={withBase('/gallery/')} class={current === 'gallery' ? 'active' : undefined}>Gallery</a></li>
+      </ul>
+
+      <!-- Booking CTA (desktop) -->
+      <a href={withBase('/contact/')} class="nav-cta">Plan Your Trip</a>
+    </div>
+
+    <!-- Mobile Navigation Overlay -->
+    <div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
+
+    <!-- Mobile Navigation (slide-in panel) -->
+    <aside class="mobile-nav" id="mobileNav" aria-label="Main menu">
+      <div class="mobile-nav-top">
+        <a href={withBase('/')} class="mobile-brand-logo" aria-label="Divine Fly Fishing">
+          <img src={withBase('/assets/images/dff-logo.svg')} width="1982" height="1331" alt="Divine Fly Fishing Logo" />
+        </a>
+        <button class="mobile-nav-close" id="menuClose" aria-label="Close menu">
+          <span></span><span></span>
+        </button>
+      </div>
+
+      <nav class="mobile-nav-list">
+        <a href={homeHref} class:list={['mobile-nav-link', { active: current === 'home' }]}>Home</a>
+        <a href={withBase('/about/')} class:list={['mobile-nav-link', { active: current === 'about' }]}>About</a>
+        <a href={withBase('/fish/')} class:list={['mobile-nav-link', { active: current === 'fish' }]}>Fish</a>
+        <a href={withBase('/packages/')} class:list={['mobile-nav-link', { active: current === 'packages' }]}>Packages</a>
+        <a href={withBase('/gallery/')} class:list={['mobile-nav-link', { active: current === 'gallery' }]}>Gallery</a>
+        <a href={withBase('/contact/')} class:list={['mobile-nav-link', { active: current === 'contact' }]}>Contact Us</a>
+      </nav>
+
+      <div class="mobile-nav-footer">
+        <a href={withBase('/contact/')} class="mobile-nav-cta">Plan Your Trip</a>
+        <a href="tel:+97517113511" class="mobile-nav-meta">+975 17113511</a>
+        <a href="mailto:tightlines@divineflyfishing.com" class="mobile-nav-meta">tightlines@divineflyfishing.com</a>
+      </div>
+    </aside>
+  </nav>

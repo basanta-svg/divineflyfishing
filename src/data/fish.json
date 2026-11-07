@@ -1,0 +1,137 @@
+[
+  {
+    "slug": "brown-trout",
+    "name": "Brown Trout",
+    "title": "Brown Trout — The Ghost of the High Altitudes | Divine Fly Fishing",
+    "description": "Discover the Brown Trout in Bhutan. Learn about its introduction in the 1930s, its adaptation to the Himalayas, and why it's a prized technical catch.",
+    "labelTop": "BROWN",
+    "labelBottom": "TROUT",
+    "paragraphs": [
+      "Introduced to the pristine waters of Bhutan in the 1930s, the Brown Trout (<em>Salmo trutta</em>) has since naturalized and thrives in the cold, high-altitude rivers of central and western Bhutan.",
+      "Found in the fast-flowing glacier-fed streams of the Paro, Haa, and Bumthang valleys, these wily fish offer a technical challenge for any angler. They are also known to inhabit high-altitude lakes, growing to impressive sizes in the serene Dagala Thousand Lakes region."
+    ],
+    "specs": [
+      [
+        "Classification",
+        "Salmonidae",
+        "Salmo Trutta"
+      ],
+      [
+        "Avg Weight",
+        "1 – 3 kg",
+        "Lakes: 6+ kg"
+      ],
+      [
+        "Origin",
+        "Introduced",
+        "Circa 1930s"
+      ]
+    ],
+    "image": "/assets/images/brown-trout-portrait.webp",
+    "imageAlt": "Brown Trout in Bhutan",
+    "usps": [
+      [
+        "Glacial Resilience",
+        "Perfectly adapted to the ice-cold, oxygen-rich waters of the high Himalayas."
+      ],
+      [
+        "Strategic Challenge",
+        "Renowned for their selective feeding and wily nature in clear waters."
+      ],
+      [
+        "Alpine Presence",
+        "Thriving in high-altitude lakes located at 4,000 meters above sea level."
+      ]
+    ]
+  },
+  {
+    "slug": "snow-trout",
+    "name": "Snow Trout",
+    "title": "Snow Trout — The Native Majesty of the Himalayas | Divine Fly Fishing",
+    "description": "Discover the Snow Trout in Bhutan. Learn about its evolutionary adaptation to torrential mountain streams and its importance in Himalayan biodiversity.",
+    "labelTop": "SNOW",
+    "labelBottom": "TROUT",
+    "paragraphs": [
+      "The Snow Trout (<em>Schizothorax</em>) is a native Himalayan species that has adapted perfectly to the torrential, ice-cold mountain streams of Bhutan.",
+      "Unlike its namesake, it is a member of the carp family with evolutionary adaptations for high-altitude white water. Found in the northern and central regions, it is a cornerstone of the Kingdom's indigenous aquatic biodiversity and a fascinating catch for seasoned anglers."
+    ],
+    "specs": [
+      [
+        "Classification",
+        "Cyprinidae",
+        "Schizothorax"
+      ],
+      [
+        "Avg Weight",
+        "0.5 – 1.5 kg",
+        "Max 3+ kg"
+      ],
+      [
+        "Status",
+        "Native",
+        "Himalayan Pride"
+      ]
+    ],
+    "image": "/assets/images/snow-trout-portrait.webp",
+    "imageAlt": "Snow Trout in Bhutan",
+    "usps": [
+      [
+        "Torrential Adaptation",
+        "Specialized for feeding in the turbulent, fast-flowing glacial rivers of the North."
+      ],
+      [
+        "Native Heritage",
+        "An indigenous species that reflects the evolutionary history of the Himalayas."
+      ],
+      [
+        "Spiritual Custodian",
+        "Often released in sacred white-water rivers during rituals of merit."
+      ]
+    ]
+  },
+  {
+    "slug": "golden-mahseer",
+    "name": "Golden Mahseer",
+    "title": "Golden Mahseer — The King of Himalayan Rivers | Divine Fly Fishing",
+    "description": "Discover the Golden Mahseer in Bhutan. Learn about its sacred status, pristine habitats, and why it's the ultimate prize for catch-and-release fly fishing.",
+    "labelTop": "GOLDEN",
+    "labelBottom": "MAHSEER",
+    "paragraphs": [
+      "The Golden Mahseer (<em>Tor putitora</em>) is a primarily river-going fish that thrives in the subtropical glacier-fed waters of Bhutan. It is also known as the <strong>“Tiger of the Himalayan Rivers.”</strong>",
+      "Found in the major river systems of the Southern foothills, the Mahseer is a symbol of power and tenacity. Our curated trips focus on strictly enforced catch-and-release protocols to preserve this endangered ghost of the river."
+    ],
+    "specs": [
+      [
+        "Classification",
+        "Cyprinidae",
+        "Tor Putitora"
+      ],
+      [
+        "Avg Weight",
+        "12 – 18 kg",
+        "Max 50+ kg"
+      ],
+      [
+        "Status",
+        "Endangered",
+        "Protected Species"
+      ]
+    ],
+    "image": "/assets/images/golden-mahseer-portrait.webp",
+    "imageAlt": "The Golden Mahseer",
+    "usps": [
+      [
+        "Powerful Migration",
+        "Navigating fierce currents and waterfalls during the spring spawning runs."
+      ],
+      [
+        "Global Recognition",
+        "Prized by the international angling community as one of the top game fish."
+      ],
+      [
+        "Sacred Guardian",
+        "Held in high spiritual regard as a protector of Bhutan's pristine waters."
+      ]
+    ]
+  }
+]

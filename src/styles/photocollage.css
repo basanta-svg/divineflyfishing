@@ -1,0 +1,48 @@
+/* ========= PHOTO COLLAGE (printed photographs, casually laid out) ========= */
+.collage {
+  display: grid;
+  grid-template-columns: repeat(var(--cols, 3), minmax(0, 1fr));
+  gap: 26px 22px;
+  padding: 20px 14px 40px;
+}
+.print {
+  position: relative;
+  margin: 0;
+  padding: 10px 10px 36px;
+  background: #fbf8f2;
+  border-radius: 3px;
+  box-shadow: 0 16px 32px -14px rgba(20, 14, 8, 0.55), 0 2px 5px rgba(20, 14, 8, 0.18);
+  transform: translateY(var(--y, 0)) rotate(var(--r, 0deg));
+  transition: transform 0.45s cubic-bezier(0.2, 0.7, 0.2, 1), box-shadow 0.45s;
+}
+.print img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 4.8;
+  object-fit: cover;
+}
+.print:hover {
+  transform: translateY(calc(var(--y, 0px) - 8px)) rotate(0deg) scale(1.03);
+  box-shadow: 0 26px 44px -16px rgba(20, 14, 8, 0.6), 0 2px 6px rgba(20, 14, 8, 0.2);
+  z-index: 2;
+}
+/* little piece of tape holding some prints */
+.print--tape::before {
+  content: '';
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  width: 74px;
+  height: 24px;
+  transform: translateX(-50%) rotate(-3deg);
+  background: rgba(214, 190, 140, 0.7);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+  z-index: 1;
+}
+
+@media (max-width: 900px) {
+  .collage { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 16px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .print { transition: none; }
+}

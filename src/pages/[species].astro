@@ -1,0 +1,84 @@
+---
+import { withBase } from '../lib/url';
+import Img from '../components/Img.astro';
+import Layout from '../layouts/Layout.astro';
+import species from '../data/fish.json';
+import '../styles/fish.css';
+
+export function getStaticPaths() {
+  return species.map((s) => ({ params: { species: s.slug }, props: { s } }));
+}
+
+const { s } = Astro.props;
+const icons = [
+  '<path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path>',
+  '<circle cx="12" cy="12" r="10"></circle><path d="M12 8l4 4-4 4M8 12h7"></path>',
+  '<path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"></path>',
+];
+---
+<Layout title={s.title} description={s.description} current="fish">
+  <header class="species-hero" style={`background-image: url('${withBase(`/assets/images/heroes/${s.slug}.webp`)}');`}>
+    <div class="hero-overlay"></div>
+    <div class="container">
+      <h1>{s.name}</h1>
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href={withBase('/')}>Home</a>
+        <span>/</span>
+        <a href={withBase('/fish/')}>Fish</a>
+        <span>/</span>
+        <span style="color: #fdfcfb;">{s.name}</span>
+      </nav>
+    </div>
+  </header>
+
+  <section class="species-showcase">
+    <div class="container">
+      <div class="showcase-grid">
+        <div class="species-content-side">
+          <span class="species-label">{s.labelTop} <br />{s.labelBottom}</span>
+
+          <div class="species-description">
+            {s.paragraphs.map((p, i) => (
+              <p style={i > 0 ? 'margin-top: 25px;' : undefined} set:html={p} />
+            ))}
+          </div>
+
+          <table class="specs-table">
+            {s.specs.map(([label, value, extra]) => (
+              <tr>
+                <td class="spec-label">{label}</td>
+                <td class="spec-value">{value}</td>
+                <td class="spec-extra">{extra}</td>
+              </tr>
+            ))}
+          </table>
+        </div>
+
+        <div class="species-visual-wrap">
+          <div class="species-visual">
+            <Img src={s.image} alt={s.imageAlt} class="species-main-img" />
+            <div class="visual-map-overlay">
+              <svg viewBox="0 0 800 600" fill="currentColor" aria-hidden="true">
+                <path d="M150,200 Q200,100 350,150 T600,200 T750,350 T500,550 T200,450 Z" />
+              </svg>
+            </div>
+          </div>
+
+          <div class="species-usp-row">
+            {s.usps.map(([heading, text], i) => (
+              <div class="usp-item">
+                <div class="usp-icon">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" set:html={icons[i]} />
+                </div>
+                <div class="usp-text">
+                  <h5>{heading}</h5>
+                  <p>{text}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

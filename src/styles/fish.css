@@ -1,0 +1,273 @@
+/* ==========================================================================
+   FISH SPECIES DETAIL PAGES STYLES
+   Used by: brown-trout.html, golden-mahseer.html, snow-trout.html
+   ========================================================================== */
+
+/* --- Hero Section --- */
+.species-hero {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  margin-top: 0;
+  padding-top: 100px;
+  background-size: cover;
+  background-position: center;
+  color: var(--color-white);
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0.1) 100%);
+  z-index: 1;
+}
+
+.species-hero .container {
+  position: relative;
+  z-index: 2;
+  text-align: left;
+  padding: 0 28px;
+}
+
+.species-hero h1 {
+  font-family: var(--font-heading);
+  font-size: min(4.5rem, 8vh);
+  font-weight: 500;
+  margin-bottom: 15px;
+  letter-spacing: -1px;
+}
+
+.breadcrumb {
+  display: flex;
+  gap: 10px;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  color: var(--color-white);
+}
+
+.breadcrumb a {
+  color: var(--color-white);
+  transition: color 0.3s;
+}
+
+.breadcrumb a:hover {
+  color: var(--color-primary);
+}
+
+/* --- Main Showcase Section --- */
+.species-showcase {
+  padding: 9vh 0;
+}
+
+.showcase-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 100px;
+  align-items: center; 
+}
+
+/* Left Side: Content Styling */
+.species-content-side {
+  text-align: left;
+}
+
+.species-label {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: min(4rem, 7vh);
+  font-weight: 600;
+  color: var(--color-black);
+  line-height: 1;
+  margin-bottom: 40px;
+  letter-spacing: -1.5px;
+}
+
+.species-description {
+  font-size: 0.95rem;
+  color: var(--color-black);
+  line-height: 1.8;
+  margin-bottom: 50px;
+}
+
+.specs-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.specs-table tr {
+  border-bottom: 1px solid var(--color-white);
+}
+
+.specs-table td {
+  padding: 22px 0;
+  font-size: 0.95rem;
+}
+
+.spec-label { color: var(--color-black); width: 35%; }
+.spec-value { font-weight: 600; color: var(--color-black); }
+.spec-extra { color: var(--color-black); font-size: 0.8rem; text-align: right; }
+
+/* Right Side: Visual & Creative USP Icons */
+.species-visual-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.species-visual {
+  position: relative;
+  max-width: 100%;
+}
+
+@media (max-width: 768px) {
+  .species-visual {
+    overflow: hidden; /* Prevent visual overflow from map svg */
+  }
+}
+
+.species-main-img {
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(40px 60px 80px rgba(0,0,0,0.08));
+  position: relative;
+  z-index: 2;
+}
+
+.visual-map-overlay {
+  position: absolute;
+  top: 50%;
+  right: -10%;
+  transform: translateY(-50%);
+  width: 90%;
+  opacity: 0.04;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Icons Row below picture in right column */
+.species-usp-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 25px;
+}
+
+.usp-item {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+  background: var(--color-white);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 30px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.usp-item:hover {
+  transform: translateY(-8px);
+  background: var(--color-white);
+  border-color: var(--color-primary);
+  box-shadow: 0 20px 50px rgba(196, 155, 99, 0.1);
+}
+
+.usp-icon {
+  flex-shrink: 0;
+  width: 50px;
+  height: 50px;
+  background: var(--color-white);
+  border: 1px solid var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: var(--color-primary);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+}
+
+.usp-item:hover .usp-icon {
+  background: var(--color-primary);
+  color: var(--color-white);
+  transform: rotate(10deg);
+}
+
+.usp-text h5 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: var(--color-black);
+  letter-spacing: -0.2px;
+}
+
+.usp-text p {
+  font-size: 0.85rem;
+  color: var(--color-black);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 1100px) {
+  .showcase-grid { grid-template-columns: 1fr; gap: 80px; align-items: flex-start; }
+  .species-usp-row { grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .usp-item { flex-direction: column; text-align: center; padding: 25px 20px; }
+  .usp-text p { font-size: 0.8rem; }
+}
+
+@media (max-width: 768px) {
+  .species-usp-row { grid-template-columns: 1fr; }
+  .species-hero h1 { font-size: 3rem; }
+  .species-label { font-size: 3.2rem; }
+}
+
+
+
+
+/* ========= SPECIES VISUAL — animated background + floating fish ========= */
+.species-visual { isolation: isolate; }
+.species-visual::before {
+  content: '';
+  position: absolute;
+  inset: -8% -6%;
+  z-index: 0;
+  background:
+    radial-gradient(40% 45% at 30% 40%, rgba(196,155,99,.32), transparent 70%),
+    radial-gradient(35% 40% at 72% 62%, rgba(255,255,255,.55), transparent 70%),
+    radial-gradient(30% 35% at 55% 25%, rgba(196,155,99,.18), transparent 70%);
+  filter: blur(18px);
+  animation: speciesBgDrift 12s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+.visual-map-overlay {
+  opacity: 0.07;
+  animation: speciesMapFloat 16s ease-in-out infinite alternate;
+}
+.species-main-img {
+  animation: speciesFishSwim 6s ease-in-out infinite;
+  transform-origin: 50% 55%;
+  will-change: transform;
+}
+
+@keyframes speciesBgDrift {
+  0%   { transform: translate3d(-3%, -2%, 0) scale(1); }
+  50%  { transform: translate3d(3%, 2%, 0) scale(1.08); }
+  100% { transform: translate3d(-1%, 4%, 0) scale(1.03); }
+}
+@keyframes speciesMapFloat {
+  0%   { transform: translateY(-50%) translateX(0) rotate(0deg); }
+  100% { transform: translateY(-50%) translateX(-4%) rotate(3deg); }
+}
+@keyframes speciesFishSwim {
+  0%   { transform: translate3d(0, 0, 0) rotate(0deg); }
+  25%  { transform: translate3d(8px, -8px, 0) rotate(1.2deg); }
+  50%  { transform: translate3d(0, -14px, 0) rotate(0deg); }
+  75%  { transform: translate3d(-8px, -6px, 0) rotate(-1.2deg); }
+  100% { transform: translate3d(0, 0, 0) rotate(0deg); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .species-visual::before, .visual-map-overlay, .species-main-img { animation: none; }
+}
