@@ -13,7 +13,7 @@
 .contact-info-side h2 {
   font-family: var(--font-heading);
   font-size: 3.5rem;
-  font-weight: 500;
+  font-weight: 400;
   color: #1a1a1a;
   line-height: 1.1;
   margin-bottom: 30px;
@@ -54,7 +54,7 @@
 .info-text h4 {
   font-family: var(--font-heading);
   font-size: 1.4rem;
-  font-weight: 600;
+  font-weight: 500;
   margin-bottom: 8px;
   color: #1a1a1a;
 }
@@ -74,7 +74,7 @@
 .contact-form-card {
   background: #fff;
   padding: 60px;
-  border-radius: 4px;
+  border-radius: var(--radius);
   box-shadow: 0 30px 80px rgba(0,0,0,0.06);
   border: 1px solid #f0f0f0;
 }
@@ -106,7 +106,7 @@
   border: 1px solid #e5e5e5;
   background: #fcfcfc;
   font-size: 1rem;
-  border-radius: 4px;
+  border-radius: var(--radius);
   transition: all 0.3s ease;
   font-family: inherit;
   color: #1a1a1a;
@@ -119,12 +119,51 @@
   box-shadow: 0 0 0 4px rgba(196, 155, 99, 0.05);
 }
 
+/* ---------- Custom dropdown ---------- */
+.cselect { position: relative; }
+.cselect-native {
+  position: absolute !important; left: 0; bottom: 0; width: 100%; height: 1px;
+  opacity: 0; pointer-events: none; padding: 0 !important; border: 0 !important;
+}
+.cselect-trigger {
+  width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  padding: 18px 20px; text-align: left; cursor: pointer;
+  border: 1px solid #e5e5e5; border-radius: var(--radius); background: #fcfcfc;
+  font-family: inherit; font-size: 1rem; color: #1a1a1a;
+  transition: border-color .3s, background .3s, box-shadow .3s;
+}
+.cselect-trigger.is-placeholder { color: #8a8a8a; }
+.cselect-trigger:hover { border-color: #d6c3a3; }
+.cselect-trigger:focus-visible, .cselect.is-open .cselect-trigger {
+  outline: none; border-color: #c49b63; background: #fff; box-shadow: 0 0 0 4px rgba(196,155,99,.12);
+}
+.cselect-trigger.is-invalid { border-color: #c0392b; }
+.cselect-arrow { flex-shrink: 0; color: #c49b63; transition: transform .3s ease; }
+.cselect.is-open .cselect-arrow { transform: rotate(180deg); }
+.cselect-list {
+  position: absolute; left: 0; right: 0; top: calc(100% + 8px); z-index: 20;
+  margin: 0; padding: 8px; list-style: none;
+  background: #fff; border: 1px solid #eadfcb; border-radius: var(--radius);
+  box-shadow: 0 20px 50px rgba(0,0,0,.14);
+  opacity: 0; visibility: hidden; transform: translateY(-6px);
+  transition: opacity .25s ease, transform .25s ease, visibility .25s;
+}
+.cselect.is-open .cselect-list { opacity: 1; visibility: visible; transform: translateY(0); }
+.cselect-list li {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 13px 14px; border-radius: var(--radius); cursor: pointer;
+  font-size: .98rem; color: #1a1a1a; transition: background .2s, color .2s;
+}
+.cselect-list li:hover { background: #f6efe3; }
+.cselect-list li.is-selected { background: #1a1a1a; color: #fff; }
+.cselect-list li.is-selected::after { content: '¹3'; color: #c49b63; font-weight: 700; }
+
 .btn-submit {
   width: 100%;
   background: #c49b63;
   color: #fff;
   padding: 18px;
-  border-radius: 12px;
+  border-radius: var(--radius);
   border: none;
   font-size: 1rem;
   font-weight: 600;

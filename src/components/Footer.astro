@@ -19,13 +19,9 @@ import Img from './Img.astro';
         <!-- Col 2: Our Partners -->
         <div class="footer-col footer-partners">
           <h3 class="footer-title">Our Partners</h3>
-          <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 20px;">
-            <Img src="/assets/images/partners/2.webp" alt="Global Rescue Partner"
-              style="height: 170px; max-width: 100%; object-fit: contain; opacity: 0.7; transition: opacity 0.3s;"
-              onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'" />
-            <Img src="/assets/images/partners/3.webp" alt="Fishing Association"
-              style="height: 170px; max-width: 100%; object-fit: contain; opacity: 0.7; transition: opacity 0.3s;"
-              onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'" />
+          <div class="footer-partner-logos">
+            <Img src="/assets/images/partners/2.webp" alt="Global Rescue Partner" />
+            <Img src="/assets/images/partners/3.webp" alt="Fishing Association" />
           </div>
         </div>
 

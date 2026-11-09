@@ -3,109 +3,146 @@ import { withBase } from '../lib/url';
 import Img from './Img.astro';
 import Layout from '../layouts/Layout.astro';
 import '../styles/packages.css';
+import '../styles/haa-valley.css';
 import data from '../data/valleys.json';
 
 interface Props { valley: keyof typeof data }
 const { valley } = Astro.props;
 const v = data[valley];
-const infoMeta = [
-  { label: 'Skill Level', icon: '<path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>' },
-  { label: 'Equipment', icon: '<path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"/><line x1="16" y1="8" x2="2" y2="22"/><line x1="17.5" y1="15" x2="9" y2="15"/>' },
-  { label: 'Methodology', icon: '<circle cx="12" cy="12" r="10"/><path d="M12 8l4 4-4 4M8 12h7"/>' },
-  { label: 'Target Species', icon: '<path d="M22 12s-4.44-7-10-7-10 7-10 7 4.44 7 10 7 10-7 10-7z"/><circle cx="12" cy="12" r="3"/>' },
-  { label: 'Best Months', icon: '<rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>' },
+const name = v.crumb.replace(/ Valley$/, '');
+const photo = (src: string) => `/assets/images/photos/full/${src}`;
+
+// Quick stats derived from the valley data
+const mon = (v.infos[4].match(/[A-Z][a-z]+/g) || []).filter((m: string) => m !== 'Prime');
+const season = mon.length ? `${mon[0].slice(0, 3)}–${mon[mon.length - 1].slice(0, 3)}` : '—';
+const rod = v.infos[1].match(/(\d)wt to (\d)wt/);
+const rods = rod ? `${rod[1]}–${rod[2]} wt` : '—';
+const speciesCount = v.infos[3].replace(/\.$/, '').split(',').length;
+const stats = [
+  { n: String(v.days.length), l: 'Days' },
+  { n: season, l: 'Season' },
+  { n: rods, l: 'Rods' },
+  { n: String(speciesCount), l: 'Species' },
 ];
+
+const infoMeta = [
+  { label: 'Skill Level', icon: '<path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />' },
+  { label: 'Equipment', icon: '<path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z" /><line x1="16" y1="8" x2="2" y2="22" /><line x1="17.5" y1="15" x2="9" y2="15" />' },
+  { label: 'Methodology', icon: '<circle cx="12" cy="12" r="10" /><path d="M12 8l4 4-4 4M8 12h7" />' },
+  { label: 'Target Species', icon: '<path d="M22 12s-4.44-7-10-7-10 7-10 7 4.44 7 10 7 10-7 10-7z" /><circle cx="12" cy="12" r="3" />' },
+  { label: 'Best Months', icon: '<rect x="3" y="4" width="18" height="18" rx="2" /><line x1="16" y1="2" x2="16" y2="6" /><line x1="8" y1="2" x2="8" y2="6" /><line x1="3" y1="10" x2="21" y2="10" />' },
+];
+const check = '<path d="M20 6L9 17l-5-5" />';
+const cross = '<path d="M18 6L6 18M6 6l12 12" />';
 ---
 <Layout title={v.title} description={v.description} current="packages">
   <header class="page-hero" style={`background-image: url('${withBase(`/assets/images/heroes/${v.heroImg}`)}');`}>
+    <div class="hero-overlay"></div>
     <div class="container slide-up">
       <h1>{v.h1}</h1>
       <nav class="breadcrumb">
-        <a href={withBase('/')}>Home</a><span>/</span><a href={withBase('/packages/')}>Packages</a><span>/</span>
+        <a href={withBase('/')}>Home</a>
+        <span>/</span>
+        <a href={withBase('/packages/')}>Packages</a>
+        <span>/</span>
         <span style="color: #fdfcfb;">{v.crumb}</span>
       </nav>
     </div>
   </header>
 
-  <section class="valley-intro">
-    <div class="container">
-      <div class="intro-text-header">
+  <!-- ========= OVERVIEW ========= -->
+  <section class="hv-overview" id="overview">
+    <div class="container hv-overview-grid">
+      <div class="hv-overview-text">
         <span class="sub-label">{v.eyebrow}</span>
         <h2>{v.heading}</h2>
         <p>{v.intro}</p>
+        <ul class="hv-stats">
+          {stats.map((st) => <li><strong>{st.n}</strong><span>{st.l}</span></li>)}
+        </ul>
       </div>
+      <div class="hv-collage">
+        <Img class="hv-collage-a" src={`/assets/images/heroes/${v.heroImg}`} alt={v.crumb} loading="lazy" />
+        <Img class="hv-collage-b" src={photo(v.slides[1].src)} alt={v.slides[1].alt} loading="lazy" />
+      </div>
+    </div>
+  </section>
 
-      <div class="fishing-info-grid info-grid">
+  <!-- ========= FISHING FACTS ========= -->
+  <section class="hv-fishing" id="fishing">
+    <div class="container">
+      <div class="hv-heading">
+        <span class="sub-label">On the Water</span>
+        <h2>How We Fish {name}</h2>
+      </div>
+      <div class="hv-facts">
         {infoMeta.map((m, i) => (
-          <div class="info-card">
-            <div class="info-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" set:html={m.icon} />
-            </div>
+          <div class="hv-fact">
+            <span class="hv-fact-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" set:html={m.icon} /></span>
             <h4>{m.label}</h4>
             <p>{v.infos[i]}</p>
           </div>
         ))}
       </div>
-
-      <div class="slider-container">
-        <div class="slider-track" id="sliderTrack">
-          {v.slides.map((s, i) => (
-            <Img src={`/assets/images/photos/full/${s.src}`} alt={s.alt} class="slide" onclick={`openModal(${i})`} />
+      <div class="hv-slider">
+        <button class="hv-slide-btn hv-slide-prev" type="button" aria-label="Previous photos">&#10094;</button>
+        <div class="hv-shots" id="hvShots">
+          {v.slides.map((sl, i) => (
+            <button class="hv-shot" aria-label={`Open photo ${i + 1}`}><Img src={sl.src === v.heroImg ? `/assets/images/heroes/${sl.src}` : photo(sl.src)} alt={sl.alt} loading="lazy" /></button>
           ))}
         </div>
-        <div class="slider-btns">
-          <button class="slider-btn prev" aria-label="Previous photo" onclick="moveSlider(-1)">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
-          </button>
-          <button class="slider-btn next" aria-label="Next photo" onclick="moveSlider(1)">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
-          </button>
-        </div>
+        <button class="hv-slide-btn hv-slide-next" type="button" aria-label="Next photos">&#10095;</button>
       </div>
     </div>
   </section>
 
-  <section class="itinerary-section">
+  <!-- ========= ITINERARY ========= -->
+  <section class="hv-itinerary" id="itinerary">
     <div class="container">
-      <div class="section-header" style="text-align: center; margin-bottom: 60px;">
+      <div class="hv-heading">
         <span class="sub-label">{v.journey}</span>
-        <h2 class="section-heading">Detailed Itinerary</h2>
+        <h2>Detailed Itinerary</h2>
       </div>
-      <div class="itinerary-container">
-        <div class="itinerary-accordion">
-          {v.days.map((d, i) => (
-            <div class={`itinerary-item${i === 0 ? ' active' : ''}`}>
-              <div class="itinerary-header" onclick="toggleAccordion(this)">
-                <div class="day-info">
-                  <span class="day-badge">Day {i + 1}</span>
-                  <h3>{d.title}</h3>
-                </div>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7"/></svg>
-              </div>
-              <div class="itinerary-content"><p>{d.text}</p></div>
+      <div class="hv-acc">
+        {v.days.map((d, i) => (
+          <div class={`hv-acc-item${i === 0 ? ' is-open' : ''}`}>
+            <h3>
+              <button class="hv-acc-head" type="button" aria-expanded={i === 0 ? 'true' : 'false'} aria-controls={`hv-day-${i + 1}`} id={`hv-head-${i + 1}`}>
+                <span class="hv-acc-day">Day {String(i + 1).padStart(2, '0')}</span>
+                <span class="hv-acc-title">{d.title}</span>
+                <span class="hv-acc-icon" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="hv-acc-panel" id={`hv-day-${i + 1}`} role="region" aria-labelledby={`hv-head-${i + 1}`}>
+              <div class="hv-acc-body"><p>{d.text}</p></div>
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
     </div>
   </section>
 
-  <section class="details-section">
+  <!-- ========= INCLUDED / EXCLUDED ========= -->
+  <section class="hv-details" id="included">
     <div class="container">
-      <div class="details-grid">
-        <div class="details-box included-box">
-          <h3>What's Included</h3>
-          <ul class="details-list">
+      <div class="hv-heading">
+        <span class="sub-label">Plan with Confidence</span>
+        <h2>What's Included</h2>
+      </div>
+      <div class="hv-details-grid">
+        <div class="hv-box hv-in">
+          <h3>Included</h3>
+          <ul>
             {v.included.map((t) => (
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="#c49b63" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg> {t}</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" set:html={check} /><span>{t}</span></li>
             ))}
           </ul>
         </div>
-        <div class="details-box excluded-box">
-          <h3>What's Excluded</h3>
-          <ul class="details-list">
+        <div class="hv-box hv-out">
+          <h3>Not Included</h3>
+          <ul>
             {v.excluded.map((t) => (
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="#e74c3c" stroke-width="3"><path d="M18 6L6 18M6 6l12 12"/></svg> {t}</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" set:html={cross} /><span>{t}</span></li>
             ))}
           </ul>
         </div>
@@ -113,38 +150,45 @@ const infoMeta = [
     </div>
   </section>
 
-  <section class="booking-section">
-    <div class="container">
-      <div class="booking-grid">
-        <div class="booking-info">
-          <span class="sub-label">Reserve Your Spot</span>
-          <h2 style="font-family: var(--font-heading); font-size: 2rem; margin-top: 15px; color: #1a1a1a;">Secure Your <br />{v.book}</h2>
-          <p style="color: #555; margin-top: 20px; line-height: 1.8; font-size: 1.1rem;">{v.booktext}</p>
-        </div>
-        <div class="booking-form">
-          <form id={v.formId}>
-            <div class="form-group">
-              <label for="pkg">Selected Package</label>
-              <input id="pkg" type="text" value={v.pkg} readonly class="readonly-field" />
-            </div>
-            <div class="form-row">
-              <div class="form-group"><label for="fn">Full Name</label><input id="fn" type="text" placeholder="John Doe" required /></div>
-              <div class="form-group"><label for="em">Email Address</label><input id="em" type="email" placeholder="john@example.com" required /></div>
-            </div>
-            <div class="form-row">
-              <div class="form-group"><label for="ph">Phone Number</label><input id="ph" type="tel" placeholder="+975 17 00 00 00" required /></div>
-              <div class="form-group"><label for="bd">Booking Date</label><input id="bd" type="date" required /></div>
-            </div>
-            <div class="form-group"><label for="nf">Number of Fishermen</label><input id="nf" type="number" min="1" max="10" value="1" /></div>
-            <div class="form-group"><label for="nt">Special Requirements / Notes</label><textarea id="nt" rows="4" placeholder="Mention any gear rental needs or dietary preferences..."></textarea></div>
-            <button type="submit" class="submit-btn" id="submitBtn">Send Booking Inquiry</button>
-          </form>
-        </div>
+  <!-- ========= BOOKING ========= -->
+  <section class="hv-book" id="book">
+    <div class="container hv-book-grid">
+      <div class="hv-book-text">
+        <span class="sub-label">Reserve Your Spot</span>
+        <h2>Secure Your {v.book}</h2>
+        <p>{v.booktext}</p>
+        <ul class="hv-contact">
+          <li><a href="tel:+97517113511">+975 17113511</a></li>
+          <li><a href="mailto:tightlines@divineflyfishing.com">tightlines@divineflyfishing.com</a></li>
+          <li><a href="https://wa.me/97517113511" target="_blank" rel="noopener noreferrer">WhatsApp Chat</a></li>
+        </ul>
       </div>
+      <form class="hv-form" id={v.formId}>
+        <div class="hv-field"><label>Selected Package</label><input type="text" value={v.pkg} readonly></div>
+        <div class="hv-row">
+          <div class="hv-field"><label>Full Name</label><input type="text" placeholder="John Doe" required></div>
+          <div class="hv-field"><label>Email Address</label><input type="email" placeholder="john@example.com" required></div>
+        </div>
+        <div class="hv-row">
+          <div class="hv-field"><label>Phone Number</label><input type="tel" placeholder="+975 17 00 00 00" required></div>
+          <div class="hv-field"><label>Booking Date</label><input type="date" required></div>
+        </div>
+        <div class="hv-field"><label>Number of Fishermen</label><input type="number" min="1" max="10" value="1"></div>
+        <div class="hv-field"><label>Special Requirements / Notes</label><textarea rows="4" placeholder="Mention any gear rental needs or dietary preferences..."></textarea></div>
+        <button type="submit" class="hv-submit" id="submitBtn">Send Booking Inquiry</button>
+      </form>
     </div>
   </section>
+
+  <!-- ========= PHOTO LIGHTBOX ========= -->
+  <div class="hv-lightbox" id="hvLightbox" aria-hidden="true">
+    <button class="hv-lb-close" id="hvClose" aria-label="Close">&times;</button>
+    <button class="hv-lb-nav hv-lb-prev" id="hvPrev" aria-label="Previous">&#10094;</button>
+    <img id="hvLbImg" src="" alt="" />
+    <button class="hv-lb-nav hv-lb-next" id="hvNext" aria-label="Next">&#10095;</button>
+  </div>
 </Layout>
 
 <script>
-  import '../scripts/packages.js';
+  import '../scripts/haa-valley.js';
 </script>

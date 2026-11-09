@@ -17,9 +17,9 @@ const icons = [
 ];
 ---
 <Layout title={s.title} description={s.description} current="fish">
-  <header class="species-hero" style={`background-image: url('${withBase(`/assets/images/heroes/${s.slug}.webp`)}');`}>
+  <header class="page-hero" style={`background-image: url('${withBase(`/assets/images/heroes/${s.slug}.webp`)}');`}>
     <div class="hero-overlay"></div>
-    <div class="container">
+    <div class="container slide-up">
       <h1>{s.name}</h1>
       <nav class="breadcrumb" aria-label="Breadcrumb">
         <a href={withBase('/')}>Home</a>

@@ -4,6 +4,7 @@
 
 /* ========= RESET & BASE ========= */
 :root {
+  --radius: 4px; /* uniform corner radius (matches homepage fish cards) */
   --font-body: 'Lora', Georgia, serif;
   --font-heading: 'Playfair Display', Georgia, serif;
   --font-accent: 'Great Vibes', cursive;
@@ -15,7 +16,9 @@
   --color-secondary: #1c1814;
 }
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; font-size: 16px; }
+html { scroll-behavior: smooth; font-size: 16px; overflow-x: hidden; max-width: 100%; }
+@media (max-width: 768px) { html { font-size: 14.5px; } }
+@media (max-width: 480px) { html { font-size: 13.5px; } }
 body {
   font-family: var(--font-body);
   color: var(--color-text);
@@ -25,6 +28,7 @@ body {
 }
 h1, h2, h3, h4, h5, h6 {
   font-style: italic;
+  font-weight: 500;
 }
 a { text-decoration: none; color: inherit; }
 ul { list-style: none; }
@@ -191,7 +195,7 @@ button, input, textarea, select, label { font-family: var(--font-body); }
   gap: 8px;
   background: var(--color-white);
   padding: 6px 16px;
-  border-radius: 30px;
+  border-radius: var(--radius);
   border: 1px solid var(--color-white);
   font-size: 0.75rem;
   font-weight: 600;
@@ -233,7 +237,7 @@ button, input, textarea, select, label { font-family: var(--font-body); }
   align-items: center;
   padding: 16px;
   background: var(--color-white);
-  border-radius: 12px;
+  border-radius: var(--radius);
   border: 1px solid var(--color-white);
   text-decoration: none;
   transition: all 0.3s ease;
@@ -258,7 +262,7 @@ button, input, textarea, select, label { font-family: var(--font-body); }
   width: 48px;
   height: 48px;
   background: var(--color-white);
-  border-radius: 10px;
+  border-radius: var(--radius);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -301,7 +305,7 @@ button, input, textarea, select, label { font-family: var(--font-body); }
   color: var(--color-primary);
   background: var(--color-white);
   padding: 4px 8px;
-  border-radius: 4px;
+  border-radius: var(--radius);
 }
 
 .mobile-nav-card.active .active-badge {
@@ -428,7 +432,7 @@ button, input, textarea, select, label { font-family: var(--font-body); }
 .section-heading {
   font-family: var(--font-heading);
   font-size: clamp(1.8rem, 3vw, 2.6rem);
-  font-weight: 500; color: var(--color-black);
+  font-weight: 400; color: var(--color-black);
   margin-bottom: 8px; line-height: 1.25;
 }
 .section-header {
@@ -461,7 +465,7 @@ button, input, textarea, select, label { font-family: var(--font-body); }
   overflow: hidden;
   height: min(580px, 68vh);
   background: var(--color-black);
-  border-radius: 4px;
+  border-radius: var(--radius);
 }
 
 .card-image-content {
@@ -529,7 +533,7 @@ button, input, textarea, select, label { font-family: var(--font-body); }
 .card-details h3 {
   font-family: var(--font-heading);
   font-size: 1.8rem;
-  font-weight: 500;
+  font-weight: 400;
   color: var(--color-white);
   margin-bottom: 10px;
   line-height: 1.2;
@@ -645,7 +649,7 @@ button, input, textarea, select, label { font-family: var(--font-body); }
 .benefit-card {
   background: #f4efe6;
   border: 1px solid rgba(28, 24, 20, 0.1);
-  border-radius: 6px;
+  border-radius: var(--radius);
   padding: 42px 26px 38px;
   transition: transform 0.35s ease, box-shadow 0.35s ease, background 0.35s ease;
 }
@@ -660,7 +664,7 @@ button, input, textarea, select, label { font-family: var(--font-body); }
   margin: 0 auto 26px;
   display: grid;
   place-items: center;
-  border-radius: 14px;
+  border-radius: var(--radius);
   background: var(--color-secondary);
   color: var(--color-primary);
   transition: background 0.35s ease, color 0.35s ease, transform 0.35s ease;
@@ -675,7 +679,7 @@ button, input, textarea, select, label { font-family: var(--font-body); }
   font-family: var(--font-heading);
   font-size: 1.2rem;
   line-height: 1.4;
-  font-weight: 600;
+  font-weight: 500;
   color: var(--color-secondary);
 }
 
@@ -693,8 +697,8 @@ button, input, textarea, select, label { font-family: var(--font-body); }
   display: flex;
   align-items: center;
   padding: 8vh 0;
-  background: var(--color-secondary);
-  color: #f3ede2;
+  background: var(--color-bg);
+  color: var(--color-text);
 }
 .valleys-section .container { width: 100%; max-width: 1400px; padding: 0 40px; }
 .valleys-head {
@@ -709,11 +713,11 @@ button, input, textarea, select, label { font-family: var(--font-body); }
   font-size: clamp(2.2rem, 4.5vw, 3.6rem);
   line-height: 1.1;
   margin-top: 14px;
-  color: #fff;
+  color: var(--color-secondary);
 }
 .valleys-head h2 em { display: block; color: var(--color-primary); font-style: italic; }
 .valleys-head-side { max-width: 420px; }
-.valleys-head-side p { color: rgba(243, 237, 226, 0.7); line-height: 1.8; margin-bottom: 20px; }
+.valleys-head-side p { color: rgba(0, 0, 0, 0.7); line-height: 1.8; margin-bottom: 20px; }
 .valleys-all {
   display: inline-flex; align-items: center; gap: 10px;
   color: var(--color-primary); text-decoration: none;
@@ -733,7 +737,7 @@ button, input, textarea, select, label { font-family: var(--font-body); }
   flex: 1 1 0;
   min-width: 0;
   overflow: hidden;
-  border-radius: 6px;
+  border-radius: var(--radius);
   color: #fff;
   text-decoration: none;
   isolation: isolate;
@@ -767,13 +771,13 @@ button, input, textarea, select, label { font-family: var(--font-body); }
 .valleys-grid:hover .valley-panel:not(:hover) .vp-content h3 { font-size: 1.25rem; }
 .vp-days {
   display: inline-block; font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase;
-  color: #f3ede2; margin-bottom: 14px;
+  color: #fff; margin-bottom: 14px;
   padding-bottom: 8px; border-bottom: 1px solid var(--color-primary);
 }
-.vp-days b { color: var(--color-primary); font-family: var(--font-heading); font-size: 1.1rem; letter-spacing: 0; }
+.vp-days b { color: #fff; font-family: var(--font-heading); font-size: 1.1rem; letter-spacing: 0; }
 .vp-tag {
   display: block; font-size: 0.7rem; letter-spacing: 0.16em; text-transform: uppercase;
-  color: rgba(243, 237, 226, 0.75); margin-bottom: 6px;
+  color: #fff; margin-bottom: 6px;
 }
 .vp-content h3 {
   font-family: var(--font-heading); font-size: 2rem; line-height: 1.1; color: #fff;
@@ -790,11 +794,11 @@ button, input, textarea, select, label { font-family: var(--font-body); }
 }
 .vp-more p em {
   font-style: normal; font-size: 0.7rem; letter-spacing: 0.12em;
-  text-transform: uppercase; color: rgba(255, 255, 255, 0.55); padding-top: 3px;
+  text-transform: uppercase; color: #fff; padding-top: 3px;
 }
 .vp-cta {
   display: inline-flex; align-items: center; gap: 10px; margin-top: 10px;
-  font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-primary);
+  font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase; color: #fff;
 }
 .vp-cta svg { width: 16px; height: 16px; transition: transform 0.3s; }
 .valley-panel:hover .vp-cta svg { transform: translateX(6px); }
@@ -855,7 +859,7 @@ button, input, textarea, select, label { font-family: var(--font-body); }
   aspect-ratio: 4 / 4.4;
   max-height: 62vh;
   object-fit: cover;
-  border-radius: 4px;
+  border-radius: var(--radius);
 }
 .about-img-team {
   position: absolute;
@@ -865,7 +869,7 @@ button, input, textarea, select, label { font-family: var(--font-body); }
   aspect-ratio: 4 / 3;
   object-fit: cover;
   border: 8px solid var(--color-bg);
-  border-radius: 4px;
+  border-radius: var(--radius);
   box-shadow: 0 14px 40px rgba(0, 0, 0, 0.25);
 }
 
@@ -1115,7 +1119,7 @@ button, input, textarea, select, label { font-family: var(--font-body); }
 .sbs-content h2 {
   font-family: var(--font-heading);
   font-size: clamp(2.5rem, 4vw, 3.5rem);
-  font-weight: 600;
+  font-weight: 500;
   color: var(--color-black);
   line-height: 1.1;
   margin-bottom: 20px;
@@ -1160,7 +1164,7 @@ button, input, textarea, select, label { font-family: var(--font-body); }
 .sbs-number {
   font-family: var(--font-heading); /* Website font */
   font-size: 2.2rem;
-  font-weight: 600;
+  font-weight: 500;
   color: var(--color-primary); /* Website gold color */
   margin-right: 20px;
   line-height: 1;
@@ -1169,7 +1173,7 @@ button, input, textarea, select, label { font-family: var(--font-body); }
 .sbs-header h3 {
   font-family: var(--font-heading);
   font-size: 1.4rem;
-  font-weight: 600;
+  font-weight: 500;
   color: var(--color-black);
   flex: 1;
 }
@@ -1267,7 +1271,7 @@ button, input, textarea, select, label { font-family: var(--font-body); }
   justify-content: center;
   color: var(--color-white);
   transition: all 0.3s ease;
-  border-radius: 4px;
+  border-radius: var(--radius);
 }
 
 .social-box svg {
@@ -1286,7 +1290,7 @@ button, input, textarea, select, label { font-family: var(--font-body); }
 .footer-title {
   font-family: var(--font-heading);
   font-size: 1.5rem;
-  font-weight: 600;
+  font-weight: 500;
   color: var(--color-white);
   margin-bottom: 30px;
   letter-spacing: 0.5px;
@@ -1356,7 +1360,7 @@ button, input, textarea, select, label { font-family: var(--font-body); }
 }
 
 .footer-copyright {
-  font-size: 0.85rem;
+  font-size: 0.75rem;
   color: var(--color-white);
   text-align: left;
 }
@@ -1366,7 +1370,7 @@ button, input, textarea, select, label { font-family: var(--font-body); }
 }
 
 .dev-credit {
-  font-size: 0.75rem;
+  font-size: 0.68rem;
   opacity: 0.8;
   margin-top: 5px;
 }
@@ -1406,7 +1410,7 @@ button, input, textarea, select, label { font-family: var(--font-body); }
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 4px;
+  border-radius: var(--radius);
   transition: all 0.3s ease;
   border: 1px solid rgba(196, 155, 99, 0.2);
 }
@@ -1548,7 +1552,7 @@ button, input, textarea, select, label { font-family: var(--font-body); }
 .about-hero h1 {
   font-family: var(--font-heading);
   font-size: clamp(3.5rem, 8vw, min(5.5rem, 10vh));
-  font-weight: 500;
+  font-weight: 400;
   line-height: 1;
   margin-bottom: 30px;
 }
@@ -1596,7 +1600,7 @@ button, input, textarea, select, label { font-family: var(--font-body); }
   width: 100%;
   aspect-ratio: 4/5;
   object-fit: cover;
-  border-radius: 4px;
+  border-radius: var(--radius);
   box-shadow: 30px 30px 80px rgba(0,0,0,0.1);
 }
 
@@ -1608,7 +1612,7 @@ button, input, textarea, select, label { font-family: var(--font-body); }
   height: 100%;
   border: 2px solid var(--color-white);
   z-index: -1;
-  border-radius: 4px;
+  border-radius: var(--radius);
 }
 
 .experience-badge {
@@ -1628,7 +1632,7 @@ button, input, textarea, select, label { font-family: var(--font-body); }
 .experience-years {
   font-family: var(--font-heading);
   font-size: 3rem;
-  font-weight: 600;
+  font-weight: 500;
   color: var(--color-primary);
   line-height: 1;
 }
@@ -1648,7 +1652,7 @@ button, input, textarea, select, label { font-family: var(--font-body); }
 .founder-name {
   font-family: var(--font-heading);
   font-size: clamp(2.5rem, 4vw, 3.8rem);
-  font-weight: 500;
+  font-weight: 400;
   color: var(--color-black);
   margin-bottom: 35px;
   line-height: 1.1;
@@ -1731,7 +1735,7 @@ button, input, textarea, select, label { font-family: var(--font-body); }
 .section-heading-lg {
   font-family: var(--font-heading);
   font-size: clamp(2.5rem, 5vw, min(4rem, 8vh));
-  font-weight: 500;
+  font-weight: 400;
   color: var(--color-black);
   line-height: 1.1;
   margin-bottom: 25px;
@@ -1757,7 +1761,7 @@ button, input, textarea, select, label { font-family: var(--font-body); }
 .mission-card-item {
   background: var(--color-white);
   padding: 60px 45px;
-  border-radius: 4px;
+  border-radius: var(--radius);
   box-shadow: 0 10px 40px rgba(0,0,0,0.03);
   position: relative;
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
@@ -1781,7 +1785,7 @@ button, input, textarea, select, label { font-family: var(--font-body); }
   right: 40px;
   font-family: var(--font-heading);
   font-size: 1.5rem;
-  font-weight: 600;
+  font-weight: 500;
   color: var(--color-white);
   transition: color 0.4s;
 }
@@ -1799,7 +1803,7 @@ button, input, textarea, select, label { font-family: var(--font-body); }
   align-items: center;
   justify-content: center;
   margin-bottom: 35px;
-  border-radius: 4px;
+  border-radius: var(--radius);
 }
 
 .mission-card-item.active .card-icon-wrap {
@@ -1815,7 +1819,7 @@ button, input, textarea, select, label { font-family: var(--font-body); }
 .mission-card-item h4 {
   font-family: var(--font-heading);
   font-size: 1.5rem;
-  font-weight: 600;
+  font-weight: 500;
   margin-bottom: 15px;
 }
 
@@ -1845,7 +1849,7 @@ button, input, textarea, select, label { font-family: var(--font-body); }
 .team-content-box h2 {
   font-family: var(--font-heading);
   font-size: clamp(2.2rem, 4vw, 3.2rem);
-  font-weight: 500;
+  font-weight: 400;
   color: var(--color-black);
   line-height: 1.1;
   margin-bottom: 25px;
@@ -1903,7 +1907,7 @@ button, input, textarea, select, label { font-family: var(--font-body); }
 .team-image-container {
   position: relative;
   overflow: hidden;
-  border-radius: 4px;
+  border-radius: var(--radius);
   box-shadow: 20px 20px 60px rgba(0,0,0,0.1);
 }
 
@@ -2002,6 +2006,7 @@ button, input, textarea, select, label { font-family: var(--font-body); }
 .page-hero h1 {
   font-family: var(--font-heading);
   font-size: min(4.5rem, 8vh);
+  font-weight: 400;
   color: var(--color-white);
   margin-bottom: 10px;
   text-shadow: 0 2px 24px rgba(0,0,0,0.55);
@@ -2136,4 +2141,88 @@ button, input, textarea, select, label { font-family: var(--font-body); }
   .mobile-nav-top { height: 12vh; }
   .mobile-nav .mobile-brand-logo img { height: 7vh; }
   .mobile-nav-link { font-size: clamp(1rem, 3.2vh, 1.25rem); }
+}
+
+
+/* ==========================================================
+   MOBILE REFINEMENTS (hero full-bleed, smaller body text,
+   redesigned "Our Packages" swipe cards)
+   ========================================================== */
+@media (max-width: 768px) {
+  /* --- Hero: edge-to-edge, full screen --- */
+  .hero { width: 100%; min-height: 100vh; min-height: 100svh; margin: 0; }
+  .hero-bg, .hero-video { width: 100%; height: 100%; }
+  .hero-content { max-width: none; padding: 0 20px 56px; }
+  .hero-subtitle { font-size: .68rem; letter-spacing: 3px; margin-bottom: 14px; }
+  .hero h1 { font-size: 2.3rem; margin-bottom: 14px; max-width: none; }
+  .hero-description { font-size: .88rem; line-height: 1.6; max-width: none; }
+
+  /* --- Body text sizes --- */
+  body { font-size: 14px; line-height: 1.65; }
+  .section-body, .section-header p { font-size: .88rem; line-height: 1.65; }
+  .section-heading { font-size: 1.55rem; }
+  .sub-label { font-size: .68rem; letter-spacing: 2.5px; }
+  .about-text-side p, .sbs-desc, .sbs-body p, .card-details p { font-size: .86rem; line-height: 1.6; }
+  .about-text-side h2, .sbs-content h2 { font-size: 1.6rem; }
+  .benefit-card h4 { font-size: .9rem; }
+  .btn-primary { padding: 12px 28px; font-size: .75rem; }
+
+  /* --- Our Packages: swipeable cards --- */
+  .valleys-section { padding: 56px 0 60px; }
+  .valleys-section .container { padding: 0; }
+  .valleys-head { padding: 0 20px; margin-bottom: 26px; gap: 14px; }
+  .valleys-head h2 { font-size: 1.7rem; margin-top: 8px; }
+  .valleys-head h2 em { display: inline; }
+  .valleys-head-side { max-width: none; }
+  .valleys-head-side p { font-size: .84rem; line-height: 1.65; margin-bottom: 14px; }
+  .valleys-all { font-size: .7rem; }
+
+  .valleys-grid {
+    display: flex; flex-direction: row; gap: 14px; height: auto;
+    overflow-x: auto; scroll-snap-type: x mandatory;
+    padding: 4px 20px 22px; scroll-padding-left: 20px;
+    -webkit-overflow-scrolling: touch; scrollbar-width: none;
+  }
+  .valleys-grid::-webkit-scrollbar { display: none; }
+  .valley-panel,
+  .valleys-grid:hover .valley-panel,
+  .valleys-grid .valley-panel:hover {
+    flex: 0 0 78%; height: 400px; scroll-snap-align: start;
+    border-radius: var(--radius); border: 1px solid rgba(196,155,99,.35);
+    box-shadow: 0 18px 36px rgba(0,0,0,.35);
+  }
+  .vp-shade, .valley-panel:hover .vp-shade {
+    background: linear-gradient(to top, rgba(14,11,8,.95) 0%, rgba(14,11,8,.55) 45%, rgba(14,11,8,0) 75%);
+  }
+  .valley-panel { display: flex; flex-direction: column; justify-content: flex-end; }
+  .vp-content, .valleys-grid:hover .valley-panel:not(:hover) .vp-content { position: static; padding: 20px 18px 18px; }
+  .valleys-grid:hover .valley-panel:not(:hover) .vp-tag { display: block; }
+  .vp-days {
+    position: absolute; top: 16px; left: 16px; margin: 0; padding: 7px 12px;
+    background: rgba(14,11,8,.72); border: 1px solid var(--color-primary);
+    border-radius: var(--radius); font-size: .62rem;
+  }
+  .vp-days b { font-size: .95rem; }
+  .vp-tag { font-size: .6rem; letter-spacing: .14em; }
+  .vp-content h3, .valleys-grid:hover .valley-panel:not(:hover) .vp-content h3 { font-size: 1.6rem; }
+  .vp-more { max-height: none; opacity: 1; margin-top: 12px; }
+  .vp-more p { font-size: .8rem; padding: 7px 0; }
+  .vp-more p em { font-size: .6rem; }
+  .vp-cta { font-size: .68rem; margin-top: 8px; }
+}
+
+/* Footer partner logos: two logos on one row */
+.footer-partner-logos {
+  display: flex; flex-wrap: nowrap; align-items: center; gap: 16px;
+}
+.footer-partner-logos img {
+  flex: 1 1 0; min-width: 0; width: 0;
+  height: 110px; object-fit: contain; object-position: left center;
+  opacity: .7; transition: opacity .3s;
+}
+.footer-partner-logos img:hover { opacity: 1; }
+
+@media (min-width: 992px) {
+  .footer-partner-logos { gap: 24px; }
+  .footer-partner-logos img { height: 160px; }
 }

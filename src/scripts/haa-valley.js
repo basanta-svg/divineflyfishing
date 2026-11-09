@@ -11,6 +11,10 @@
         if (open) { item.classList.add('is-open'); h.setAttribute('aria-expanded', 'true'); }
       });
     });
+    var track = document.getElementById('hvShots');
+    function slide(d) { track.scrollBy({ left: d * (track.querySelector('.hv-shot').offsetWidth + 16), behavior: 'smooth' }); }
+    document.querySelector('.hv-slide-prev').onclick = function () { slide(-1); };
+    document.querySelector('.hv-slide-next').onclick = function () { slide(1); };
     var shots = Array.prototype.slice.call(document.querySelectorAll('.hv-shot img'));
     var lb = document.getElementById('hvLightbox'), img = document.getElementById('hvLbImg'), cur = 0;
     function show(i) { cur = (i + shots.length) % shots.length; img.src = shots[cur].src; img.alt = shots[cur].alt; }

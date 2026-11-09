@@ -7,6 +7,7 @@ import '../styles/haa-valley.css';
 ---
 <Layout title="Haa Valley Package — High Altitude Fly Fishing | Divine Fly Fishing" description="Experience a 7-day technical fly fishing journey in the pristine Haa Valley. Discover the art of stalking Brown Trout in crystal-clear mountain streams." current="packages">
 <header class="page-hero" style={`background-image: url('${withBase('/assets/images/heroes/haa.webp')}');`}>
+    <div class="hero-overlay"></div>
     <div class="container slide-up">
       <h1>Haa Valley Journey</h1>
       <nav class="breadcrumb">
@@ -18,19 +19,6 @@ import '../styles/haa-valley.css';
       </nav>
     </div>
   </header>
-
-  <!-- ========= STICKY SUB-NAV ========= -->
-  <nav class="hv-subnav" aria-label="Page sections">
-    <div class="container hv-subnav-inner">
-      <div class="hv-subnav-links">
-        <a href="#overview">Overview</a>
-        <a href="#fishing">Fishing</a>
-        <a href="#itinerary">Itinerary</a>
-        <a href="#included">Included</a>
-      </div>
-      <a href="#book" class="hv-subnav-cta">Reserve</a>
-    </div>
-  </nav>
 
   <!-- ========= OVERVIEW ========= -->
   <section class="hv-overview" id="overview">
@@ -48,7 +36,7 @@ import '../styles/haa-valley.css';
       </div>
       <div class="hv-collage">
         <Img class="hv-collage-a" src="/assets/images/heroes/haa.webp" alt="Haa Valley" loading="lazy" />
-        <Img class="hv-collage-b" src="/assets/images/photos/full/img-1541.webp" alt="Fishing the Haa Chhu" loading="lazy" />
+        <Img class="hv-collage-b" src="/assets/images/photos/full/y48c8787.webp" alt="Fishing the Haa Chhu" loading="lazy" />
       </div>
     </div>
   </section>
@@ -87,11 +75,15 @@ import '../styles/haa-valley.css';
           <p>Peak window: March – October.</p>
         </div>
       </div>
-      <div class="hv-shots">
+      <div class="hv-slider">
+        <button class="hv-slide-btn hv-slide-prev" type="button" aria-label="Previous photos">&#10094;</button>
+        <div class="hv-shots" id="hvShots">
           <button class="hv-shot" aria-label="Open photo 1"><Img src="/assets/images/heroes/haa.webp" alt="Haa Valley landscape" loading="lazy" /></button>
-          <button class="hv-shot" aria-label="Open photo 2"><Img src="/assets/images/photos/full/bumthang.webp" alt="Mountain valley" loading="lazy" /></button>
-          <button class="hv-shot" aria-label="Open photo 3"><Img src="/assets/images/photos/full/img-1541.webp" alt="River in Bhutan" loading="lazy" /></button>
-          <button class="hv-shot" aria-label="Open photo 4"><Img src="/assets/images/photos/full/img-2812.webp" alt="Rainbow trout catch" loading="lazy" /></button>
+          <button class="hv-shot" aria-label="Open photo 2"><Img src="/assets/images/photos/full/img-3294.webp" alt="Fly fishing the Haa Chhu" loading="lazy" /></button>
+          <button class="hv-shot" aria-label="Open photo 3"><Img src="/assets/images/photos/full/img-9769-edited.webp" alt="Angler in the river" loading="lazy" /></button>
+          <button class="hv-shot" aria-label="Open photo 4"><Img src="/assets/images/photos/full/img-3235.webp" alt="Brown trout catch" loading="lazy" /></button>
+        </div>
+        <button class="hv-slide-btn hv-slide-next" type="button" aria-label="Next photos">&#10095;</button>
       </div>
     </div>
   </section>

@@ -2,7 +2,6 @@
 import { withBase } from '../lib/url';
 import Img from '../components/Img.astro';
 import Layout from '../layouts/Layout.astro';
-import PhotoCollage from '../components/PhotoCollage.astro';
 import '../styles/about.css';
 
 const momentPhotos = ['y48c7373', 'y48c5621', 'y48c5039', 'y48c5274', 'y48c5462', 'y48c6082', 'y48c6535', 'y48c7469'];
@@ -31,14 +30,15 @@ const checks = [
 <Layout title="About Us | Divine Fly Fishing — Fly Fishing Trips to Bhutan" description="Learn about Singhey Gyamtsho, founder of Divine Fly Fishing, and our mission to provide sustainable, world-class fly fishing in Bhutan." current="about">
 
   <!-- ========= HERO ========= -->
-  <header class="ab-hero" style={`--hero: url('${withBase('/assets/images/heroes/about.webp')}');`}>
-    <div class="ab-hero-inner container slide-up">
+  <header class="page-hero" style={`background-image: url('${withBase('/assets/images/heroes/about.webp')}');`}>
+    <div class="hero-overlay"></div>
+    <div class="container slide-up">
+      <h1>About Us</h1>
       <nav class="breadcrumb">
-        <a href={withBase('/')}>Home</a><span>/</span><span style="color: #fdfcfb;">About Us</span>
+        <a href={withBase('/')}>Home</a>
+        <span>/</span>
+        <span style="color: #fdfcfb;">About Us</span>
       </nav>
-      <span class="sub-label">Our Story</span>
-      <h1>Born on the water, <em>guided by the rivers</em></h1>
-      <p>Conservation-led fly fishing in the last Himalayan Kingdom — led by Bhutanese guides who grew up beside these rivers.</p>
     </div>
   </header>
 
@@ -83,7 +83,14 @@ const checks = [
         <h2>Photographs from <em>our journeys</em></h2>
         <p>A few frames from the rivers, the camps and the people we fish with.</p>
       </div>
-      <PhotoCollage images={momentPhotos} cols={4} theme="dark" alt="Fly fishing journey in Bhutan" />
+      <div class="ab-mosaic">
+        {momentPhotos.map((src, i) => (
+          <figure class={`ab-tile ab-tile--${i + 1}`}>
+            <Img src={`/assets/images/photos/full/${src}.webp`} alt={`Fly fishing journey in Bhutan — photo ${i + 1}`} loading="lazy" decoding="async" />
+            <figcaption><span>{String(i + 1).padStart(2, '0')}</span></figcaption>
+          </figure>
+        ))}
+      </div>
     </div>
   </section>
 
@@ -113,19 +120,24 @@ const checks = [
 
   <!-- ========= TEAM & SAFETY ========= -->
   <section class="ab-team">
-    <div class="ab-team-photo">
-      <Img src="/assets/images/photos/full/y48c5621.webp" alt="Our elite guiding team on the Bhutanese rivers" loading="lazy" />
-    </div>
-    <div class="container">
-      <div class="ab-team-card">
+    <div class="container ab-team-grid">
+      <div class="ab-team-media">
+        <Img src="/assets/images/photos/full/y48c5621.webp" alt="Our elite guiding team on the Bhutanese rivers" loading="lazy" />
+        <div class="ab-team-badge">
+          <strong>10+</strong>
+          <span>Years of Class IV–V<br />rafting experience</span>
+        </div>
+      </div>
+      <div class="ab-team-copy">
         <span class="sub-label">Elite Logistics</span>
         <h2>Our Team &amp; <em>Professional Partners</em></h2>
         <p>Safety is our cornerstone. For float trips, we partner with specialized rafting firms boasting over a decade of Class IV-V experience, ensuring your journey is as secure as it is breathtaking.</p>
-        <ul>
-          {checks.map((t) => (
+        <ul class="ab-team-list">
+          {checks.map((t, i) => (
             <li>
+              <span class="ab-team-n">{String(i + 1).padStart(2, '0')}</span>
+              <span class="ab-team-t">{t}</span>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5" /></svg>
-              {t}
             </li>
           ))}
         </ul>
@@ -134,7 +146,7 @@ const checks = [
   </section>
 
   <!-- ========= CTA ========= -->
-  <section class="ab-cta">
+  <section class="ab-cta" style={`background-image: url('${withBase('/assets/images/heroes/haa.webp')}');`}>
     <div class="container">
       <h2>Ready to fish the <em>last Himalayan Kingdom?</em></h2>
       <div class="ab-cta-actions">

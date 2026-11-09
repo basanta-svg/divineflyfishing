@@ -3,59 +3,6 @@
    Used by: brown-trout.html, golden-mahseer.html, snow-trout.html
    ========================================================================== */
 
-/* --- Hero Section --- */
-.species-hero {
-  position: relative;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  margin-top: 0;
-  padding-top: 100px;
-  background-size: cover;
-  background-position: center;
-  color: var(--color-white);
-}
-
-.hero-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to right, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0.1) 100%);
-  z-index: 1;
-}
-
-.species-hero .container {
-  position: relative;
-  z-index: 2;
-  text-align: left;
-  padding: 0 28px;
-}
-
-.species-hero h1 {
-  font-family: var(--font-heading);
-  font-size: min(4.5rem, 8vh);
-  font-weight: 500;
-  margin-bottom: 15px;
-  letter-spacing: -1px;
-}
-
-.breadcrumb {
-  display: flex;
-  gap: 10px;
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  letter-spacing: 2.5px;
-  color: var(--color-white);
-}
-
-.breadcrumb a {
-  color: var(--color-white);
-  transition: color 0.3s;
-}
-
-.breadcrumb a:hover {
-  color: var(--color-primary);
-}
-
 /* --- Main Showcase Section --- */
 .species-showcase {
   padding: 9vh 0;
@@ -77,7 +24,7 @@
   display: block;
   font-family: var(--font-heading);
   font-size: min(4rem, 7vh);
-  font-weight: 600;
+  font-weight: 500;
   color: var(--color-black);
   line-height: 1;
   margin-bottom: 40px;
@@ -161,7 +108,7 @@
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   padding: 30px;
-  border-radius: 12px;
+  border-radius: var(--radius);
   border: 1px solid rgba(255, 255, 255, 0.3);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
@@ -220,7 +167,6 @@
 
 @media (max-width: 768px) {
   .species-usp-row { grid-template-columns: 1fr; }
-  .species-hero h1 { font-size: 3rem; }
   .species-label { font-size: 3.2rem; }
 }
 
