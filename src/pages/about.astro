@@ -4,7 +4,6 @@ import Img from '../components/Img.astro';
 import Layout from '../layouts/Layout.astro';
 import '../styles/about.css';
 
-const momentPhotos = ['y48c7373', 'y48c5621', 'y48c5039', 'y48c5274', 'y48c5462', 'y48c6082', 'y48c6535', 'y48c7469'];
 
 const pillars = [
   {
@@ -57,42 +56,49 @@ const checks = [
         </figure>
 
         <div class="ab-founder-text">
-          <span class="sub-label">The Visionary Behind Divine</span>
+          <span class="sub-label">Fly Fisherman &amp; Founder</span>
           <h2>Singhey Gyamtsho</h2>
+          <p class="ab-intro">An article by Jeff Smecker, <em>troutstrike.com</em>, best surmises Singheys’ love and passion for fly fishing.</p>
           <blockquote>
-            “There are many reasons why I choose to fish. Revealing the mystery of what lies beneath the darkest reaches of the river temporarily satisfies an insatiable curiosity...”
+            <p>“There are many reasons why I choose to fish. Revealing the mystery of what lies beneath the darkest reaches of the river temporarily satisfies an insatiable curiosity. The process of bringing a fish to my net stimulates the body, the mind, and the soul.</p>
+            <p>I fish because it is the only time I am enveloped in the present. Thoughts of the past and fears of the future are no match against the intentional focus required to coax a suspicious fish to take my fly.</p>
+            <p>In that moment, that split second when a fish strikes, the world around me pauses. (Singhey refers to it as ‘Bliss’ and is ever grateful to Jeff for elegantly putting words to feelings)”</p>
           </blockquote>
-          <div class="ab-bio">
-            <p>Singhey's heart has always belonged to the water. In 2023, following the introduction of revolutionary sustainable fishing regulations in Bhutan, he founded <strong>Divine Flyfishing</strong>. His mission is to share the thrill of catching the legendary Golden Mahseer and the elusive Snow Trout with the world, all while preserving Bhutan's natural sanctuary.</p>
-            <p>As a registered Fishing Guide with the <strong>Fly Fishers International Guide Association</strong>, Singhey blends local wisdom with international standards of excellence.</p>
-          </div>
-          <div class="ab-credential">
-            <Img src="/assets/images/ffi-council-logo.webp" alt="Fly Fishers International Guides Association" />
-            <span>Registered guide · Fly Fishers International</span>
-          </div>
+        </div>
+      </div>
+
+      <div class="ab-founder-bottom">
+        <div class="ab-bio">
+          <p>Singhey Co-founded a trading company and has been his profession from 2009. With the culmination of his love &amp; passion for fly fishing and the introduction of rules &amp; regulations for “Recreational Fishing” in Bhutan in 2022, a spark was lit.</p>
+          <p>In 2023, he founded ‘Divine Flyfishing’, a company that offers and specializes in Fly Fishing in Bhutan for the Golden Mahseer, Chocolate Mahseer, Brown Trout and Snow Trout.</p>
+          <p>He is also a member and registered as a Fishing Guide with <strong>Fly Fishers International Guide Association</strong>.</p>
+        </div>
+        <div class="ab-credential">
+          <Img src="/assets/images/ffi-council-logo.webp" alt="Fly Fishers International Guides Association" />
+          <span>Registered guide · Fly Fishers International</span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ========= MOMENTS (interactive photo arc) ========= -->
-  <section class="ab-moments">
-    <div class="container">
-      <div class="ab-head ab-head--center">
-        <span class="sub-label">Moments from the River</span>
-        <h2>Photographs from <em>our journeys</em></h2>
-        <p>A few frames from the rivers, the camps and the people we fish with.</p>
+  <!-- ========= COMPANY ========= -->
+  <section class="ab-company">
+    <div class="container ab-company-inner">
+      <div class="ab-head">
+        <span class="sub-label">Who We Are</span>
+        <h2>Divine <em>Fly Fishing</em></h2>
       </div>
-      <div class="ab-mosaic">
-        {momentPhotos.map((src, i) => (
-          <figure class={`ab-tile ab-tile--${i + 1}`}>
-            <Img src={`/assets/images/photos/full/${src}.webp`} alt={`Fly fishing journey in Bhutan — photo ${i + 1}`} loading="lazy" decoding="async" />
-            <figcaption><span>{String(i + 1).padStart(2, '0')}</span></figcaption>
-          </figure>
-        ))}
+      <div class="ab-company-text">
+        <p>Divine Flyfishing is a company registered under the Department of Tourism, Bhutan.</p>
+        <p>Divine Flyfishing looks to connect with fellow Fly Fishermen around the world and welcome them to the banks of the pristine rivers flowing in the pristine environment of Bhutan. ‘Bhutan’ the only Carbon Negative Country in the world where the Constitution mandates 60% forest coverage always.</p>
+        <p>Divine Flyfishing also looks to promote the sport of fly fishing amongst Bhutanese. In time fly fishing lessons and gear for rental will be provided. Fly fishing amongst the Bhutanese is at its infancy and they hope to give many Bhutanese that first hook set.</p>
+        <p>Divine Flyfishing endeavors to contribute towards Bhutan becoming a ‘Globally Recognized Fly-Fishing Destination.’</p>
+        <p>The Company is also a member and registered with FLY FISHERS INTERNATIONAL.</p>
+        <p><strong>Divine Flyfishing promotes and solely practices ‘Catch &amp; Release’!</strong></p>
       </div>
     </div>
   </section>
+
 
   <!-- ========= MISSION ========= -->
   <section class="ab-mission">
@@ -131,7 +137,8 @@ const checks = [
       <div class="ab-team-copy">
         <span class="sub-label">Elite Logistics</span>
         <h2>Our Team &amp; <em>Professional Partners</em></h2>
-        <p>Safety is our cornerstone. For float trips, we partner with specialized rafting firms boasting over a decade of Class IV-V experience, ensuring your journey is as secure as it is breathtaking.</p>
+        <p>For Float Trips, Divine Flyfishing uses the services of Professional &amp; Certified Rafting Companies with almost a decade of experience on the rivers of Bhutan. This approach ensures maximum safety.</p>
+        <p>Divine Flyfishing works with Certified Fishing Guides (from the 1st batch certified in 2023) who have lived most of their life by the river targeted to be fished. This ensures optimum river knowledge corelating to fish habitat and movement. Based on the targeted river the choice of fishing guide will change accordingly.</p>
         <ul class="ab-team-list">
           {checks.map((t, i) => (
             <li>
@@ -145,14 +152,13 @@ const checks = [
     </div>
   </section>
 
-  <!-- ========= CTA ========= -->
-  <section class="ab-cta" style={`background-image: url('${withBase('/assets/images/heroes/haa.webp')}');`}>
+  <!-- ========= VISION ========= -->
+  <section class="ab-vision" style={`background-image: url('${withBase('/assets/images/heroes/bumthang.webp')}');`}>
     <div class="container">
-      <h2>Ready to fish the <em>last Himalayan Kingdom?</em></h2>
-      <div class="ab-cta-actions">
-        <a href={withBase('/packages/')} class="ab-btn ab-btn--solid">View packages</a>
-        <a href={withBase('/contact/')} class="ab-btn ab-btn--ghost">Plan your trip</a>
-      </div>
+      <span class="sub-label">Our Vision</span>
+      <h2>Nourish <em>Your Soul</em></h2>
     </div>
   </section>
+
+
 </Layout>

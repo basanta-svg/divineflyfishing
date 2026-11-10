@@ -2226,3 +2226,17 @@ button, input, textarea, select, label { font-family: var(--font-body); }
   .footer-partner-logos { gap: 24px; }
   .footer-partner-logos img { height: 160px; }
 }
+
+/* Homepage quote */
+.home-quote { max-width: 760px; margin: 28px auto 0; text-align: center; }
+.home-quote blockquote {
+  position: relative; margin: 0; padding: 0;
+  font-family: var(--font-heading); font-style: italic; font-weight: 400;
+  font-size: clamp(1.15rem, 2.2vw, 1.6rem); line-height: 1.6; color: var(--color-secondary);
+  text-wrap: balance;
+}
+.home-quote figcaption {
+  display: flex; align-items: center; justify-content: center; gap: 14px; margin-top: 20px;
+  font-size: 0.78rem; letter-spacing: 0.22em; text-transform: uppercase; color: #5a5043;
+}
+.home-quote-line { width: 36px; height: 1px; background: var(--color-primary); }

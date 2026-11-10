@@ -185,3 +185,70 @@
   .ab-team-badge { padding: 14px 18px; bottom: 20px; }
   .ab-team-badge strong { font-size: 2rem; }
 }
+
+/* Content from previous site */
+.ab-intro { color: #3b342b; line-height: 1.8; margin-bottom: 18px; max-width: 620px; }
+.ab-founder-text blockquote p { font-size: inherit; margin: 0 0 14px; line-height: 1.6; }
+.ab-founder-text blockquote p:last-child { margin-bottom: 0; }
+.ab-founder-text blockquote { font-size: clamp(1rem, 1.35vw, 1.2rem); }
+
+.ab-company { padding: calc(var(--ab-section-y) * 0.8) 0; background: #f3ede2; }
+.ab-company-inner { display: grid; grid-template-columns: 4fr 8fr; gap: var(--ab-gap); align-items: start; }
+.ab-company .ab-head h2 { color: var(--color-secondary); margin-bottom: 0; }
+.ab-company-text p { line-height: 1.85; color: #3b342b; margin-bottom: 18px; }
+.ab-company-text p:last-child { margin-bottom: 0; color: var(--color-secondary); }
+
+.ab-vision {
+  position: relative; text-align: center; color: #fff;
+  padding: calc(var(--ab-section-y) * 1.4) 0;
+  background-color: #1c1814; background-size: cover; background-position: center;
+}
+.ab-vision::before { content: ""; position: absolute; inset: 0; background: rgba(20, 16, 12, 0.6); }
+.ab-vision .container { position: relative; z-index: 1; }
+.ab-vision h2 { font-family: var(--font-heading); font-size: clamp(2.4rem, 6vw, 4.6rem); line-height: 1.1; margin-top: 14px; color: #fff; }
+.ab-vision h2 em { color: var(--color-primary); }
+
+@media (max-width: 991px) {
+  .ab-company-inner { grid-template-columns: 1fr; gap: 28px; }
+}
+
+/* Alignment fixes */
+.ab-founder-grid { align-items: start; }
+.ab-portrait { position: sticky; top: 110px; }
+.ab-founder-text h2 { margin-top: 10px; }
+.ab-company-inner { align-items: start; }
+.ab-company .ab-head { position: sticky; top: 110px; }
+@media (max-width: 991px) {
+  .ab-portrait, .ab-company .ab-head { position: static; }
+  .ab-founder-grid { gap: 48px; }
+}
+
+/* Portrait fills the full height of the text column */
+@media (min-width: 992px) {
+  .ab-founder-grid { align-items: stretch; }
+  .ab-portrait { position: relative; top: auto; display: flex; flex-direction: column; }
+  .ab-portrait-frame { flex: 1; min-height: 0; }
+  .ab-portrait-frame img { height: 100%; aspect-ratio: auto; position: absolute; inset: 0; }
+  .ab-company .ab-head { position: static; }
+}
+
+/* Team: visible label + image matches text column height */
+.ab-team .sub-label, .ab-vision .sub-label { color: var(--color-primary); }
+@media (min-width: 992px) {
+  .ab-team-grid { align-items: stretch; }
+  .ab-team-media { position: relative; }
+  .ab-team-media img { position: absolute; inset: 0; width: 100%; height: 100%; aspect-ratio: auto; object-fit: cover; }
+  .ab-team-copy { align-self: center; }
+}
+
+/* Founder: photo + intro/quote on top, bio full width below */
+.ab-founder-grid { grid-template-columns: 5fr 6fr; gap: 56px; }
+.ab-portrait { position: relative; top: auto; }
+.ab-founder-text h2 { margin: 10px 0 20px; font-size: clamp(2.2rem, 4vw, 3.2rem); }
+.ab-founder-bottom { margin-top: 56px; }
+.ab-founder-bottom .ab-bio p { max-width: none; }
+.ab-founder-bottom .ab-bio p:first-child::first-letter { float: none; font-size: inherit; padding: 0; color: inherit; line-height: inherit; font-family: inherit; }
+@media (max-width: 991px) {
+  .ab-founder-grid { grid-template-columns: 1fr; gap: 40px; }
+  .ab-founder-bottom { margin-top: 36px; }
+}
