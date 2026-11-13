@@ -1,0 +1,122 @@
+---
+const number = '97517113511';
+---
+<div class="chat-widget" id="chatWidget" data-number={number}>
+  <div class="chat-panel" id="chatPanel" role="dialog" aria-label="Chat with Divine Fly Fishing" hidden>
+    <div class="chat-head">
+      <svg class="chat-head-fish" viewBox="0 0 64 64" fill="currentColor" aria-hidden="true"><path d="M62 32c-5 8-13 14-24 14-4 0-8-1-12-3l-10 9 3-13c-5-2-10-5-14-7 4-2 9-5 14-7l-3-13 10 9c4-2 8-3 12-3 11 0 19 6 24 14zM46 27a3 3 0 1 0 0 6 3 3 0 0 0 0-6z"/></svg>
+      <span class="chat-head-title">Let&rsquo;s chat on WhatsApp</span>
+      <button class="chat-collapse" id="chatCollapse" type="button" aria-label="Close chat">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+    </div>
+
+    <div class="chat-body">
+      <div class="chat-bubble">
+        <span>Kuzuzangpo la! 👋 How can we help you plan your Bhutan fly fishing trip?</span>
+        <time id="chatTime"></time>
+      </div>
+    </div>
+
+    <form class="chat-form" id="chatForm" autocomplete="off">
+      <div class="chat-input-wrap">
+        <svg class="chat-smile" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8.5 14.5c1 1.2 2.2 1.8 3.5 1.8s2.5-.6 3.5-1.8"/><circle cx="9" cy="10" r=".6" fill="currentColor"/><circle cx="15" cy="10" r=".6" fill="currentColor"/></svg>
+        <input id="chatInput" type="text" placeholder="Type your message..." aria-label="Your message" />
+      </div>
+      <button class="chat-send" type="submit" aria-label="Send on WhatsApp">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M2.5 20.5l19-8.5-19-8.5v6.6l13.5 1.9-13.5 1.9z"/></svg>
+      </button>
+    </form>
+  </div>
+
+  <button class="chat-fab" id="chatFab" type="button" aria-label="Chat with us" aria-expanded="false">
+    <svg class="chat-fab-fish" viewBox="0 0 64 64" fill="currentColor" aria-hidden="true"><path d="M62 32c-5 8-13 14-24 14-4 0-8-1-12-3l-10 9 3-13c-5-2-10-5-14-7 4-2 9-5 14-7l-3-13 10 9c4-2 8-3 12-3 11 0 19 6 24 14zM46 27a3 3 0 1 0 0 6 3 3 0 0 0 0-6z"/></svg>
+    <svg class="chat-fab-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+  </button>
+</div>
+
+<style is:global>
+  .chat-widget { position: fixed; right: 22px; bottom: 22px; z-index: 900; display: flex; flex-direction: column; align-items: flex-end; gap: 14px; }
+
+  .chat-fab {
+    width: 50px; height: 50px; border-radius: 50%; border: 2px solid var(--color-primary, #c49b63); cursor: pointer;
+    background: var(--color-secondary, #1c1814); color: var(--color-primary, #c49b63); display: grid; place-items: center;
+    box-shadow: 0 8px 22px rgba(0,0,0,0.35); transition: transform .25s, background .25s, color .25s;
+  }
+  .chat-fab:hover { transform: scale(1.08); }
+  .chat-fab svg { grid-area: 1 / 1; width: 26px; height: 26px; transition: opacity .2s, transform .25s; }
+  .chat-fab-x { opacity: 0; transform: rotate(-90deg); width: 21px !important; height: 21px !important; }
+  .chat-fab[aria-expanded="true"] { border-color: transparent; background: #1c1814; color: #fff; }
+  .chat-fab[aria-expanded="true"] .chat-fab-fish { opacity: 0; transform: rotate(90deg); }
+  .chat-fab[aria-expanded="true"] .chat-fab-x { opacity: 1; transform: none; }
+
+  .chat-panel {
+    width: 320px; max-width: calc(100vw - 28px); border-radius: 8px; overflow: hidden; background: #ece6da;
+    box-shadow: 0 20px 55px rgba(0,0,0,0.35); transform-origin: bottom right; animation: chatPop .3s cubic-bezier(.2,.8,.2,1);
+  }
+  .chat-panel[hidden] { display: none; }
+
+  .chat-head { display: flex; align-items: center; gap: 12px; padding: 14px 16px; background: #1c1814; color: #fff; box-shadow: 0 6px 14px -6px rgba(0,0,0,0.4); position: relative; z-index: 1; }
+  .chat-head-fish { width: 34px; height: 34px; padding: 6px; border-radius: 50%; border: 1px solid var(--color-primary, #c49b63); color: var(--color-primary, #c49b63); flex: none; }
+  .chat-head-title { flex: 1; font-size: 1rem; font-weight: 500; font-family: var(--font-body, serif); }
+  .chat-collapse { border: 0; background: none; color: #fff; cursor: pointer; display: grid; place-items: center; width: 30px; height: 30px; }
+  .chat-collapse svg { width: 22px; height: 22px; }
+
+  .chat-body {
+    min-height: 210px; padding: 18px 16px;
+    background-color: #ece6da;
+    background-image:
+      radial-gradient(circle at 20% 25%, rgba(196,155,99,0.12) 0 2px, transparent 3px),
+      radial-gradient(circle at 70% 60%, rgba(196,155,99,0.12) 0 2px, transparent 3px),
+      radial-gradient(circle at 40% 85%, rgba(196,155,99,0.12) 0 2px, transparent 3px);
+    background-size: 46px 46px, 62px 62px, 54px 54px;
+  }
+  .chat-bubble {
+    display: inline-block; max-width: 88%; background: #fff; color: #1c1814; padding: 9px 14px 6px;
+    border-radius: 4px 16px 16px 16px; font-size: 0.9rem; line-height: 1.5; box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+    animation: chatIn .4s ease .15s both;
+  }
+  .chat-bubble time { display: block; font-size: 0.66rem; color: #9b9183; margin-top: 2px; }
+
+  .chat-form { display: flex; align-items: center; gap: 10px; padding: 12px 14px; background: #ece6da; }
+  .chat-input-wrap { flex: 1; display: flex; align-items: center; gap: 8px; background: #fff; border-radius: 999px; padding: 4px 14px 4px 10px; }
+  .chat-smile { width: 22px; height: 22px; color: #b8b0a2; flex: none; }
+  .chat-input-wrap input { flex: 1; min-width: 0; border: 0; outline: 0; background: transparent; font-size: 0.92rem; padding: 10px 0; color: #1c1814; }
+  .chat-send {
+    width: 42px; height: 42px; border-radius: 50%; border: 0; cursor: pointer; flex: none; display: grid; place-items: center;
+    background: linear-gradient(135deg, #c8a64f, #b17c1f); color: #1c1814; transition: transform .2s;
+  }
+  .chat-send:hover { transform: scale(1.08); }
+  .chat-send svg { width: 20px; height: 20px; margin-left: 2px; }
+
+  @keyframes chatPop { from { opacity: 0; transform: translateY(12px) scale(.96); } to { opacity: 1; transform: none; } }
+  @keyframes chatIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+  @media (max-width: 480px) { .chat-widget { right: 14px; bottom: 14px; } .chat-fab { width: 46px; height: 46px; } }
+</style>
+
+<script>
+  const root = document.getElementById('chatWidget');
+  const fab = document.getElementById('chatFab');
+  const panel = document.getElementById('chatPanel');
+  const form = document.getElementById('chatForm');
+  const input = document.getElementById('chatInput') as HTMLInputElement | null;
+  const time = document.getElementById('chatTime');
+  if (root && fab && panel) {
+    const set = (open: boolean) => {
+      panel.hidden = !open;
+      fab.setAttribute('aria-expanded', String(open));
+      if (open) {
+        if (time) time.textContent = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+        setTimeout(() => input?.focus(), 50);
+      }
+    };
+    fab.addEventListener('click', () => set(panel.hidden));
+    document.getElementById('chatCollapse')?.addEventListener('click', () => set(false));
+    form?.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const msg = (input?.value || '').trim() || 'Hello Divine Fly Fishing, I would like to enquire about a fly fishing trip.';
+      window.open(`https://wa.me/${root.dataset.number}?text=${encodeURIComponent(msg)}`, '_blank', 'noopener');
+      if (input) input.value = '';
+    });
+  }
+</script>

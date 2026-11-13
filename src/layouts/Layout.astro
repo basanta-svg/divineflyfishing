@@ -2,6 +2,7 @@
 import { withBase } from '../lib/url';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
+import ChatWidget from '../components/ChatWidget.astro';
 import '@fontsource/great-vibes/400.css';
 import '@fontsource/lora/400.css';
 import '@fontsource/lora/700.css';
@@ -49,6 +50,7 @@ const ogImage = new URL(ogPhoto.src, Astro.site ?? Astro.url).href;
     <Nav current={current} />
     <slot />
     <Footer />
+    <ChatWidget />
     <script>
       import '../scripts/main.js';
     </script>
