@@ -2231,12 +2231,13 @@ button, input, textarea, select, label { font-family: var(--font-body); }
 .home-quote { max-width: 760px; margin: 28px auto 0; text-align: center; }
 .home-quote blockquote {
   position: relative; margin: 0; padding: 0;
-  font-family: var(--font-heading); font-style: italic; font-weight: 400;
-  font-size: clamp(1.15rem, 2.2vw, 1.6rem); line-height: 1.6; color: var(--color-secondary);
+  font-family: var(--font-body); font-style: normal; font-weight: 400;
+  font-size: 1.05rem; line-height: 1.8; color: #3b342b;
   text-wrap: balance;
 }
 .home-quote figcaption {
   display: flex; align-items: center; justify-content: center; gap: 14px; margin-top: 20px;
-  font-size: 0.78rem; letter-spacing: 0.22em; text-transform: uppercase; color: #5a5043;
+  font-size: 0.95rem; letter-spacing: 0; text-transform: none; color: #3b342b;
 }
 .home-quote-line { width: 36px; height: 1px; background: var(--color-primary); }
+.home-quote, .home-quote * { font-style: normal !important; }
